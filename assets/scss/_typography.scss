@@ -1,0 +1,70 @@
+/* Font Family */
+$font-family-sans-serif: 'Yaku Kumi Sans', 'Noto Sans JP', 'Noto Sans CJK JP', 'Source Han Sans JP', -apple-system, sans-serif;
+$font-family-monospace: monospace;
+
+/* Master Size */
+$font-size-xxl: calc(1.6rem * 8 / 5);
+$font-size-xl: calc(1.6rem * 8 / 6);
+$font-size-l: calc(1.6rem * 8 / 7);
+$font-size-m: calc(1.6rem * 8 / 8);
+$font-size-s: calc(1.6rem * 8 / 9);
+$font-size-xs: calc(1.6rem * 8 / 10);
+$font-size-xxs: calc(1.6rem * 8 / 11);
+
+/* Master Line Height */
+$font-line-height-xxl: 3.2rem;
+$font-line-height-xl: 3.2rem;
+$font-line-height-l: 2.4rem;
+$font-line-height-m: 2.4rem;
+$font-line-height-s: 1.6rem;
+$font-line-height-xs: 1.6rem;
+$font-line-height-xxs: 1.6rem;
+
+/* Master Weight */
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+.font-body {
+  font-size: $font-size-m;
+  line-height: $font-line-height-m;
+  font-weight: $font-weight-regular;
+}
+
+/* Title */
+.font-title-large {
+  font-size: $font-size-xxl;
+  line-height: $font-line-height-xxl;
+  font-weight: $font-weight-regular;
+}
+
+.font-title-medium {
+  font-size: $font-size-xl;
+  line-height: $font-line-height-xl;
+  font-weight: $font-weight-regular;
+}
+
+.font-title-small {
+  font-size: $font-size-l;
+  line-height: $font-line-height-l;
+  font-weight: $font-weight-regular;
+}
+
+/* Label */
+.font-label-large {
+  font-size: $font-size-m;
+  line-height: $font-line-height-m;
+  font-weight: $font-weight-medium;
+}
+
+.font-label-medium {
+  font-size: $font-size-s;
+  line-height: $font-line-height-s;
+  font-weight: $font-weight-medium;
+}
+
+.font-label-small {
+  font-size: $font-size-xs;
+  line-height: $font-line-height-xs;
+  font-weight: $font-weight-medium;
+}

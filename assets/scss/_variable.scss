@@ -1,0 +1,15 @@
+@import 'yakukumi', 'colors', 'typography';
+
+// aspect ratio
+$golden-ratio: 1.6180339887;
+
+// screen size
+$screen-x-small-min: 320px;
+$screen-small-min: 576px;
+$screen-medium-min: 768px;
+$screen-large-min: 992px;
+$screen-x-large-min: 1200px;
+$screen-xx-large-min: 1400px;
+
+$my-box-shadow-level-1: 0 0 2px 0 rgba($color-neutral-0, 20%);
+$my-box-shadow-level-2: 0 0 4px 0 rgba($color-neutral-0, 20%);
