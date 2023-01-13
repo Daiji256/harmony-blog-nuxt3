@@ -1,6 +1,11 @@
 export default defineNuxtConfig({
 	css: ['modern-css-reset'],
 	modules: ['@nuxt/content'],
+	content: {
+		markdown: {
+			remarkPlugins: ['remark-kumi']
+		}
+	},
 	runtimeConfig: {
 		public: {
 			siteName: 'Kumi Blog',
