@@ -3,9 +3,9 @@ export default defineNuxtConfig({
 	modules: ['@nuxt/content'],
 	runtimeConfig: {
 		public: {
-			siteName: 'Photo Gallery',
-			siteDescription: 'このブログは XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX',
-			baseUrl: 'https://photo-gallery-blog-nuxt3.vercel.app',
+			siteName: 'Kumi Blog',
+			siteDescription: 'Description',
+			baseUrl: 'https://example.com',
 			pickupPosts: ['/posts/dummy01', '/posts/dummy02', '/posts/dummy03'],
 		}
 	},
