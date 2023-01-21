@@ -1,6 +1,6 @@
 import flatMap from "unist-util-flatmap";
 
-export default function rehypeAkikumi() {
+export default function rehypeAdjustAki() {
   const JAPANESE_WESTERN_REGEXP =
     /([ぁ-んァ-ヶ一-龠ー])([0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ])/g;
   const WESTERN_JAPANESE_REGEXP =
@@ -26,7 +26,7 @@ export default function rehypeAkikumi() {
         break;
       }
       ret.push(makeText(text.slice(0, idx + 1)));
-      ret.push(makeSpan("akikumi-aki-4"));
+      ret.push(makeSpan("adjust-aki-mixed-aki"));
       text = text.slice(idx + 1);
     }
     return ret;
