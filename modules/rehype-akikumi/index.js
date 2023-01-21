@@ -36,9 +36,9 @@ export default function rehypeAkikumi() {
     return { type: "text", value: value };
   };
 
-  const makeSpan = (className, value = null) => {
+  const makeSpan = (className, value) => {
     let children = [];
-    if (value !== null) {
+    if (value !== undefined) {
       children = [makeText(value)];
     }
     return {
