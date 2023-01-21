@@ -1,6 +1,6 @@
 import flatMap from 'unist-util-flatmap';
 
-export default function plugin() {
+export default function rehypeAkikumi() {
     function transformer(tree) {
         flatMap(tree, function (node) {
             if (node.type !== 'text') return [node];

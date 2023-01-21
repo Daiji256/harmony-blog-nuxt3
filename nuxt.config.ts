@@ -3,7 +3,7 @@ export default defineNuxtConfig({
 	modules: ['@nuxt/content'],
 	content: {
 		markdown: {
-			rehypePlugins: ['rehype-kumi']
+			rehypePlugins: ['rehype-akikumi']
 		}
 	},
 	runtimeConfig: {
