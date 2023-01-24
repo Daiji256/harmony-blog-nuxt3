@@ -5,11 +5,11 @@ export default function rehypeAdjustAki() {
     /([ぁ-んァ-ヶ一-龠ー])([0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ])/;
   const WESTERN_JAPANESE_AKI_REGEXP =
     /([0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ])([ぁ-んァ-ヶ一-龠ー])/;
-  const FIRST_LEFT_YAKUMONO_AKI_REGEXP = /^[（〔［｛〈《「『【｟〘〖〝]/;
+  const FIRST_LEFT_YAKUMONO_AKI_REGEXP = /^([（〔［｛〈《「『【｟〘〖〝])/;
+  const LAST_RIGHT_YAKUMONO_AKI_REGEXP =
+    /([）〕］｝〉》」』】｠〙〗〟。．、，])$/;
   const LEFT_YAKUMONO_AKI_REGEXP =
     /([^（〔［｛〈《「『【｟〘〖〝・：；])([（〔［｛〈《「『【｟〘〖〝])/;
-  const LAST_RIGHT_YAKUMONO_AKI_REGEXP =
-    /[）〕］｝〉》」』】｠〙〗〟。．、，]$/;
   const RIGHT_YAKUMONO_AKI_REGEXP =
     /([）〕］｝〉》」』】｠〙〗〟。．、，])([^）〕］｝〉》」』】｠〙〗〟。．、，・：；])/;
 
