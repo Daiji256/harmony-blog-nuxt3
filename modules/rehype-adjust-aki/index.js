@@ -12,9 +12,7 @@ export default function rehypeAdjustAki() {
     const jwaBetweenRegexp = new RegExp(
       "[" + JC + "][" + WC + "]|[" + WC + "][" + JC + "]"
     );
-    flatMap(tree, (node) => {
-      return insertAkiBetween(node, jwaBetweenRegexp, jwaClassName);
-    });
+    insertAkiBetween(tree, jwaBetweenRegexp, jwaClassName);
 
     const lryaClassName = "adjust-aki-yakumono-aki";
     const lryaFirstRegexp = new RegExp("^[" + LY + "]");
@@ -22,15 +20,9 @@ export default function rehypeAdjustAki() {
     const lryaBetweenRegexp = new RegExp(
       "[^" + LY + MY + "][" + LY + "]|[" + RY + "][^" + RY + MY + "]"
     );
-    flatMap(tree, (node) => {
-      return insertAkiFirst(node, lryaFirstRegexp, lryaClassName);
-    });
-    flatMap(tree, (node) => {
-      return insertAkiLast(node, lryaLastRegexp, lryaClassName);
-    });
-    flatMap(tree, (node) => {
-      return insertAkiBetween(node, lryaBetweenRegexp, lryaClassName);
-    });
+    insertAkiFirst(tree, lryaFirstRegexp, lryaClassName);
+    insertAkiLast(tree, lryaLastRegexp, lryaClassName);
+    insertAkiBetween(tree, lryaBetweenRegexp, lryaClassName);
 
     const myaClassName = "adjust-aki-middle-yakumono-aki";
     const myaFirstRegexp = new RegExp("^[" + MY + "]");
@@ -38,50 +30,50 @@ export default function rehypeAdjustAki() {
     const myaBetweenRegexp = new RegExp(
       "[^" + MY + "][" + MY + "]|[" + MY + "][^" + MY + "]"
     );
-    flatMap(tree, (node) => {
-      return insertAkiFirst(node, myaFirstRegexp, myaClassName);
-    });
-    flatMap(tree, (node) => {
-      return insertAkiLast(node, myaLastRegexp, myaClassName);
-    });
-    flatMap(tree, (node) => {
-      return insertAkiBetween(node, myaBetweenRegexp, myaClassName);
-    });
+    insertAkiFirst(tree, myaFirstRegexp, myaClassName);
+    insertAkiLast(tree, myaLastRegexp, myaClassName);
+    insertAkiBetween(tree, myaBetweenRegexp, myaClassName);
   };
 
-  const insertAkiFirst = (node, regexp, className) => {
-    if (node.type !== "text") return [node];
-    const text = node.value;
-    if (text.search(regexp) < 0) {
-      return [makeText(text)];
-    }
-    return [makeSpan(className), makeText(text)];
-  };
-
-  const insertAkiLast = (node, regexp, className) => {
-    if (node.type !== "text") return [node];
-    const text = node.value;
-    if (text.search(regexp) < 0) {
-      return [makeText(text)];
-    }
-    return [makeText(text), makeSpan(className)];
-  };
-
-  const insertAkiBetween = (node, regexp, className) => {
-    if (node.type !== "text") return [node];
-    let ret = [];
-    let text = node.value;
-    while (true) {
-      const idx = text.search(regexp);
-      if (idx < 0) {
-        ret.push(makeText(text));
-        break;
+  const insertAkiFirst = (tree, regexp, className) => {
+    flatMap(tree, (node) => {
+      if (node.type !== "text") return [node];
+      const text = node.value;
+      if (text.search(regexp) < 0) {
+        return [makeText(text)];
       }
-      ret.push(makeText(text.slice(0, idx + 1)));
-      ret.push(makeSpan(className));
-      text = text.slice(idx + 1);
-    }
-    return ret;
+      return [makeSpan(className), makeText(text)];
+    });
+  };
+
+  const insertAkiLast = (tree, regexp, className) => {
+    flatMap(tree, (node) => {
+      if (node.type !== "text") return [node];
+      const text = node.value;
+      if (text.search(regexp) < 0) {
+        return [makeText(text)];
+      }
+      return [makeText(text), makeSpan(className)];
+    });
+  };
+
+  const insertAkiBetween = (tree, regexp, className) => {
+    flatMap(tree, (node) => {
+      if (node.type !== "text") return [node];
+      let ret = [];
+      let text = node.value;
+      while (true) {
+        const idx = text.search(regexp);
+        if (idx < 0) {
+          ret.push(makeText(text));
+          break;
+        }
+        ret.push(makeText(text.slice(0, idx + 1)));
+        ret.push(makeSpan(className));
+        text = text.slice(idx + 1);
+      }
+      return ret;
+    });
   };
 
   const makeText = (value) => {
