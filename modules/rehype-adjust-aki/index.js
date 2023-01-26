@@ -8,13 +8,13 @@ export default function rehypeAdjustAki() {
     const RY = "）〕］｝〉》」』】｠〙〗〟。．、，";
     const MY = "・：；";
 
-    const jwaClassName = "adjust-aki-mixed-aki";
+    const jwaClassName = "aa-mixed-aki";
     const jwaBetweenRegexp = new RegExp(
       "[" + JC + "][" + WC + "]|[" + WC + "][" + JC + "]"
     );
     insertAkiBetween(tree, jwaBetweenRegexp, jwaClassName);
 
-    const lryaClassName = "adjust-aki-yakumono-aki";
+    const lryaClassName = "aa-yakumono-aki";
     const lryaFirstRegexp = new RegExp("^[" + LY + "]");
     const lryaLastRegexp = new RegExp("[" + RY + "]$");
     const lryaBetweenRegexp = new RegExp(
@@ -24,7 +24,7 @@ export default function rehypeAdjustAki() {
     insertAkiLast(tree, lryaLastRegexp, lryaClassName);
     insertAkiBetween(tree, lryaBetweenRegexp, lryaClassName);
 
-    const myaClassName = "adjust-aki-middle-yakumono-aki";
+    const myaClassName = "aa-middle-yakumono-aki";
     const myaFirstRegexp = new RegExp("^[" + MY + "]");
     const myaLastRegexp = new RegExp("[" + MY + "]$");
     const myaBetweenRegexp = new RegExp(
