@@ -40,9 +40,9 @@ export default function rehypeAdjustAki() {
       if (node.type !== "text") return [node];
       const text = node.value;
       if (text.search(regexp) < 0) {
-        return [makeText(text)];
+        return [makeTextNode(text)];
       }
-      return [makeSpan(className), makeText(text)];
+      return [makeSpanNode(className), makeTextNode(text)];
     });
   };
 
@@ -51,9 +51,9 @@ export default function rehypeAdjustAki() {
       if (node.type !== "text") return [node];
       const text = node.value;
       if (text.search(regexp) < 0) {
-        return [makeText(text)];
+        return [makeTextNode(text)];
       }
-      return [makeText(text), makeSpan(className)];
+      return [makeTextNode(text), makeSpanNode(className)];
     });
   };
 
@@ -65,25 +65,25 @@ export default function rehypeAdjustAki() {
       while (true) {
         const idx = text.search(regexp);
         if (idx < 0) {
-          ret.push(makeText(text));
+          ret.push(makeTextNode(text));
           break;
         }
-        ret.push(makeText(text.slice(0, idx + 1)));
-        ret.push(makeSpan(className));
+        ret.push(makeTextNode(text.slice(0, idx + 1)));
+        ret.push(makeSpanNode(className));
         text = text.slice(idx + 1);
       }
       return ret;
     });
   };
 
-  const makeText = (value) => {
+  const makeTextNode = (value) => {
     return { type: "text", value: value };
   };
 
-  const makeSpan = (className, value) => {
+  const makeSpanNode = (className, value) => {
     let children = [];
     if (value !== undefined) {
-      children = [makeText(value)];
+      children = [makeTextNode(value)];
     }
     return {
       type: "element",
