@@ -7,6 +7,8 @@ export default function rehypeAdjustAki() {
     const LY = "（〔［｛〈《「『【｟〘〖〝";
     const RY = "）〕］｝〉》」』】｠〙〗〟。．、，";
     const MY = "・：；";
+    const DP = "！？‼⁇⁈⁉";
+    const FS = "　";
 
     const jwaClassName = "aa-mixed-aki";
     const jwaBetweenRegexp = new RegExp(
@@ -45,6 +47,10 @@ export default function rehypeAdjustAki() {
     const myeClassName = "aa-middle-yakumono";
     const myeRegexp = new RegExp("[" + MY + "]");
     eraseAki(tree, myeRegexp, myeClassName);
+
+    const dpaClassName = "aa-dividing-punctuation-aki";
+    const dpaRegexp = new RegExp("[" + DP + "][" + FS + "]");
+    replaceDpAki(tree, dpaRegexp, dpaClassName);
   };
 
   const insertAkiFirst = (tree, regexp, className) => {
@@ -102,6 +108,25 @@ export default function rehypeAdjustAki() {
         ret.push(makeTextNode(text.slice(0, idx)));
         ret.push(makeSpanNode(className, text.charAt(idx)));
         text = text.slice(idx + 1);
+      }
+      return ret;
+    });
+  };
+
+  const replaceDpAki = (tree, regexp, className) => {
+    flatMap(tree, (node) => {
+      if (node.type !== "text") return [node];
+      let ret = [];
+      let text = node.value;
+      while (true) {
+        const idx = text.search(regexp);
+        if (idx < 0) {
+          ret.push(makeTextNode(text));
+          break;
+        }
+        ret.push(makeTextNode(text.slice(0, idx + 1)));
+        ret.push(makeSpanNode(className));
+        text = text.slice(idx + 2);
       }
       return ret;
     });
