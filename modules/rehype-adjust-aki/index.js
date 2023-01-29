@@ -72,16 +72,16 @@ export default function rehypeAdjustAki() {
   };
 
   const replaceText = (tree, regexp, replacement) => {
-    flatMap(tree, (node) => {
-      if (node.type !== "text") return [node];
+    flatMap(tree, (node, _, parent) => {
+      if (!isProcessingNode(node, parent)) return [node];
       const text = node.value;
       return [makeTextNode(text.replace(regexp, replacement))];
     });
   };
 
   const insertAkiFirst = (tree, regexp, className) => {
-    flatMap(tree, (node) => {
-      if (node.type !== "text") return [node];
+    flatMap(tree, (node, _, parent) => {
+      if (!isProcessingNode(node, parent)) return [node];
       const text = node.value;
       if (text.search(regexp) < 0) {
         return [makeTextNode(text)];
@@ -91,8 +91,8 @@ export default function rehypeAdjustAki() {
   };
 
   const insertAkiLast = (tree, regexp, className) => {
-    flatMap(tree, (node) => {
-      if (node.type !== "text") return [node];
+    flatMap(tree, (node, _, parent) => {
+      if (!isProcessingNode(node, parent)) return [node];
       const text = node.value;
       if (text.search(regexp) < 0) {
         return [makeTextNode(text)];
@@ -102,8 +102,8 @@ export default function rehypeAdjustAki() {
   };
 
   const insertAkiBetween = (tree, regexp, className) => {
-    flatMap(tree, (node) => {
-      if (node.type !== "text") return [node];
+    flatMap(tree, (node, _, parent) => {
+      if (!isProcessingNode(node, parent)) return [node];
       let ret = [];
       let text = node.value;
       while (true) {
@@ -121,8 +121,8 @@ export default function rehypeAdjustAki() {
   };
 
   const eraseAki = (tree, regexp, className) => {
-    flatMap(tree, (node) => {
-      if (node.type !== "text") return [node];
+    flatMap(tree, (node, _, parent) => {
+      if (!isProcessingNode(node, parent)) return [node];
       let ret = [];
       let text = node.value;
       while (true) {
@@ -140,8 +140,8 @@ export default function rehypeAdjustAki() {
   };
 
   const replaceDpAki = (tree, regexp, className) => {
-    flatMap(tree, (node) => {
-      if (node.type !== "text") return [node];
+    flatMap(tree, (node, _, parent) => {
+      if (!isProcessingNode(node, parent)) return [node];
       let ret = [];
       let text = node.value;
       while (true) {
@@ -156,6 +156,14 @@ export default function rehypeAdjustAki() {
       }
       return ret;
     });
+  };
+
+  const isProcessingNode = (node, parent) => {
+    return !(
+      node.type !== "text" ||
+      parent?.tagName === "code" ||
+      parent?.tagName === "code-inline"
+    );
   };
 
   const makeTextNode = (value) => {
