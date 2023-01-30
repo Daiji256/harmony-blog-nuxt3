@@ -4,29 +4,11 @@ export default function rehypeAdjustAki() {
   const adjustAki = (tree) => {
     const JC = "ぁ-んァ-ヶ一-龠ー";
     const WC = "0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ";
-    const SQ = "'";
-    const LSQ = "‘";
-    const RSQ = "’";
-    const DQ = '"';
-    const LDQ = "“";
-    const RDQ = "”";
-    const LYJ = "（〔［｛〈《「『【｟〘〖〝";
-    const RYJ = "）〕］｝〉》」』】｠〙〗〟。．、，";
-    const LY = LYJ + LSQ + LDQ;
-    const RY = RYJ + RSQ + RDQ;
+    const LY = "（〔［｛〈《「『【｟〘〖〝";
+    const RY = "）〕］｝〉》」』】｠〙〗〟。．、，";
     const MY = "・：；";
     const DP = "！？‼⁇⁈⁉";
     const FS = "　";
-
-    const lsqRegexp = new RegExp("(\\s" + SQ + ")|(^" + SQ + ")", "g");
-    const rsqRegexp = new RegExp("(" + SQ + "\\s)|(" + SQ + "$)", "g");
-    replaceText(tree, lsqRegexp, LSQ);
-    replaceText(tree, rsqRegexp, RSQ);
-
-    const ldqRegexp = new RegExp("(\\s" + DQ + ")|(^" + DQ + ")", "g");
-    const rdqRegexp = new RegExp("(" + DQ + "\\s)|(" + DQ + "$)", "g");
-    replaceText(tree, ldqRegexp, LDQ);
-    replaceText(tree, rdqRegexp, RDQ);
 
     const jwaClassName = "aa--jw-aki";
     const jwaBetweenRegexp = new RegExp(
@@ -55,11 +37,11 @@ export default function rehypeAdjustAki() {
     insertAkiBetween(tree, myaBetweenRegexp, myaClassName);
 
     const lyeClassName = "aa--l-pm";
-    const lyeRegexp = new RegExp("[" + LYJ + "]");
+    const lyeRegexp = new RegExp("[" + LY + "]");
     eraseAki(tree, lyeRegexp, lyeClassName);
 
     const ryeClassName = "aa--r-pm";
-    const ryeRegexp = new RegExp("[" + RYJ + "]");
+    const ryeRegexp = new RegExp("[" + RY + "]");
     eraseAki(tree, ryeRegexp, ryeClassName);
 
     const myeClassName = "aa--m-pm";
@@ -69,14 +51,6 @@ export default function rehypeAdjustAki() {
     const dpaClassName = "aa--d-pm-aki";
     const dpaRegexp = new RegExp("[" + DP + "][" + FS + "]");
     replaceDpAki(tree, dpaRegexp, dpaClassName);
-  };
-
-  const replaceText = (tree, regexp, replacement) => {
-    flatMap(tree, (node, _, parent) => {
-      if (!isProcessingNode(node, parent)) return [node];
-      const text = node.value;
-      return [makeTextNode(text.replace(regexp, replacement))];
-    });
   };
 
   const insertAkiFirst = (tree, regexp, className) => {
