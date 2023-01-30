@@ -28,13 +28,13 @@ export default function rehypeAdjustAki() {
     replaceText(tree, ldqRegexp, LDQ);
     replaceText(tree, rdqRegexp, RDQ);
 
-    const jwaClassName = "aa-mixed-aki";
+    const jwaClassName = "aa--jw-aki";
     const jwaBetweenRegexp = new RegExp(
       "[" + JC + "][" + WC + "]|[" + WC + "][" + JC + "]"
     );
     insertAkiBetween(tree, jwaBetweenRegexp, jwaClassName);
 
-    const lryaClassName = "aa-yakumono-aki";
+    const lryaClassName = "aa--lr-pm-aki";
     const lryaFirstRegexp = new RegExp("^[" + LY + "]");
     const lryaLastRegexp = new RegExp("[" + RY + "]$");
     const lryaBetweenRegexp = new RegExp(
@@ -44,7 +44,7 @@ export default function rehypeAdjustAki() {
     insertAkiLast(tree, lryaLastRegexp, lryaClassName);
     insertAkiBetween(tree, lryaBetweenRegexp, lryaClassName);
 
-    const myaClassName = "aa-middle-yakumono-aki";
+    const myaClassName = "aa--m-pm-aki";
     const myaFirstRegexp = new RegExp("^[" + MY + "]");
     const myaLastRegexp = new RegExp("[" + MY + "]$");
     const myaBetweenRegexp = new RegExp(
@@ -54,19 +54,19 @@ export default function rehypeAdjustAki() {
     insertAkiLast(tree, myaLastRegexp, myaClassName);
     insertAkiBetween(tree, myaBetweenRegexp, myaClassName);
 
-    const lyeClassName = "aa-left-yakumono";
+    const lyeClassName = "aa--l-pm";
     const lyeRegexp = new RegExp("[" + LYJ + "]");
     eraseAki(tree, lyeRegexp, lyeClassName);
 
-    const ryeClassName = "aa-right-yakumono";
+    const ryeClassName = "aa--r-pm";
     const ryeRegexp = new RegExp("[" + RYJ + "]");
     eraseAki(tree, ryeRegexp, ryeClassName);
 
-    const myeClassName = "aa-middle-yakumono";
+    const myeClassName = "aa--m-pm";
     const myeRegexp = new RegExp("[" + MY + "]");
     eraseAki(tree, myeRegexp, myeClassName);
 
-    const dpaClassName = "aa-dividing-punctuation-aki";
+    const dpaClassName = "aa--d-pm-aki";
     const dpaRegexp = new RegExp("[" + DP + "][" + FS + "]");
     replaceDpAki(tree, dpaRegexp, dpaClassName);
   };
