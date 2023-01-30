@@ -13,6 +13,7 @@
     "@nuxt/content": "^2.3.0",
     "modern-css-reset": "^1.4.0",
     "rehype-adjust-aki": "file:modules/rehype-adjust-aki",
+    "rehype-quotes": "file:modules/rehype-quotes",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0"
   }
