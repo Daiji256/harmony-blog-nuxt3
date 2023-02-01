@@ -2,7 +2,6 @@
 title: '日本語とWesternの混植'
 description: 'ほげほげ'
 date: 2022-02-01
-image: '/images/sample-01.webp'
 tags: ['ほげ', 'ふが', 'ぴよ']
 ---
 
