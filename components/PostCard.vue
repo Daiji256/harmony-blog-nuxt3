@@ -15,7 +15,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/variable';
+@import "../assets/scss/variable";
 
 .post-card-click {
 	text-decoration: none;

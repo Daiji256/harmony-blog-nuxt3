@@ -12,7 +12,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/variable';
+@import "../assets/scss/variable";
 
 .post {
 	@extend .font-body;
@@ -65,7 +65,7 @@
 </style>
 
 <style lang="scss">
-@import '../assets/scss/variable';
+@import "../assets/scss/variable";
 
 .doc-body {
 	h1 {

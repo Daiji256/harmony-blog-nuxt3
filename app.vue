@@ -8,7 +8,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import 'assets/scss/variable';
+@import "assets/scss/variable";
 
 .main-wrapper {
 	margin: 0 auto;
@@ -19,7 +19,7 @@
 </style>
 
 <style lang="scss">
-@import '../assets/scss/variable';
+@import "../assets/scss/variable";
 
 html {
 	font-size: 62.5%;
@@ -59,29 +59,29 @@ body {
 
 <script setup lang="ts">
 useHead({
-	htmlAttrs: { lang: 'ja', prefix: 'og: http://ogp.me/ns#' },
+	htmlAttrs: { lang: "ja", prefix: "og: http://ogp.me/ns#" },
 	meta: [
-		{ property: 'og:site_name', content: useRuntimeConfig().siteName },
-		{ name: 'twitter:card', content: 'summary_large_image' },
+		{ property: "og:site_name", content: useRuntimeConfig().siteName },
+		{ name: "twitter:card", content: "summary_large_image" },
 	],
 	link: [
 		{
-			rel: 'shortcut icon',
-			type: 'image/x-icon',
-			href: '/favicon/favicon.ico'
+			rel: "shortcut icon",
+			type: "image/x-icon",
+			href: "/favicon/favicon.ico"
 		},
 		{
-			rel: 'preconnect',
-			href: 'https://fonts.googleapis.com',
+			rel: "preconnect",
+			href: "https://fonts.googleapis.com",
 		},
 		{
-			rel: 'preconnect',
-			href: 'https://fonts.gstatic.com',
-			crossorigin: '',
+			rel: "preconnect",
+			href: "https://fonts.gstatic.com",
+			crossorigin: "",
 		},
 		{
-			rel: 'stylesheet',
-			href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap',
+			rel: "stylesheet",
+			href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap",
 		},
 	],
 });

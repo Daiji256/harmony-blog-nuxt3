@@ -1,9 +1,9 @@
 <template>
-	<footer>&copy; 2022 Daiji256</footer>
+  <footer>&copy; 2022 Daiji256</footer>
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/variable';
+@import "../assets/scss/variable";
 
 footer {
   @extend .font-label-medium;

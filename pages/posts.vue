@@ -23,7 +23,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/variable';
+@import "../assets/scss/variable";
 
 .posts {
 	margin: 0 16px;
@@ -124,10 +124,10 @@ useHead({
 	title: title,
 });
 
-const posts = await queryContent('posts')
-	.where({ '_draft': false })
-	.sort({ 'date': -1 })
-	.only(['_path', 'title', 'date', 'tags', 'image'])
+const posts = await queryContent("posts")
+	.where({ "_draft": false })
+	.sort({ "date": -1 })
+	.only(["_path", "title", "date", "tags", "image"])
 	.find();
 
 const tagsCount: number[] = [posts].flat().map(post => post.tags).flat().reduce(

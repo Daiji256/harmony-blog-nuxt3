@@ -72,7 +72,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/variable';
+@import "../assets/scss/variable";
 
 header {
 	z-index: 1;
@@ -285,7 +285,7 @@ const siteName = useRuntimeConfig().siteName
 
 const getIsActive = (current: String) => {
 	// TODO: スラッシュをとりあえず消して処理している
-	return useRoute().path.replaceAll('/', '') === current.replaceAll('/', '');
+	return useRoute().path.replaceAll("/", "") === current.replaceAll("/", "");
 }
 
 const isScroll = ref(false);
@@ -306,7 +306,7 @@ let drawerRightX: number = 360;
 const onResize = () => {
 	vh = window.innerHeight * 0.01;
 	drawerRightX = window.innerWidth * 0.75 < 360 ? window.innerWidth * 0.75 : 360;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
+	document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 
 const frameInterval: number = 1000 / 30;
@@ -320,8 +320,8 @@ const animation = () => {
 	if (!isAnimated) return;
 	touchePrevX = toucheX;
 	swipeLength = startX - toucheX > 0 ? startX - toucheX : 0;
-	document.documentElement.style.setProperty('--drawer-opacity', `${1 - swipeLength / drawerRightX}`);
-	document.documentElement.style.setProperty('--drawer-translate-x', `${- swipeLength / drawerRightX * 100}%`);
+	document.documentElement.style.setProperty("--drawer-opacity", `${1 - swipeLength / drawerRightX}`);
+	document.documentElement.style.setProperty("--drawer-translate-x", `${- swipeLength / drawerRightX * 100}%`);
 	setTimeout(animation, frameInterval);
 }
 const onTouchStart = (event) => {
@@ -330,8 +330,8 @@ const onTouchStart = (event) => {
 	isSwipe.value = true;
 	toucheX = event.touches[0].pageX;
 	startX = toucheX < drawerRightX ? toucheX : drawerRightX;
-	document.documentElement.style.setProperty('--drawer-opacity', `1`);
-	document.documentElement.style.setProperty('--drawer-translate-x', `0%`);
+	document.documentElement.style.setProperty("--drawer-opacity", `1`);
+	document.documentElement.style.setProperty("--drawer-translate-x", `0%`);
 	animation();
 }
 const onTouchMove = (event) => {
@@ -350,22 +350,22 @@ const onTouchEnd = () => {
 onMounted(() => {
 	vh = window.innerHeight * 0.01;
 	drawerRightX = window.innerWidth * 0.75 < 360 ? window.innerWidth * 0.75 : 360;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-	window.addEventListener('resize', onResize);
-	window.addEventListener('touchstart', onTouchStart);
-	window.addEventListener('touchmove', onTouchMove);
-	window.addEventListener('touchend', onTouchEnd);
-	window.addEventListener('touchcancel', onTouchEnd);
-	window.addEventListener('popstate', closeMenu);
-	window.addEventListener('scroll', onScroll);
+	document.documentElement.style.setProperty("--vh", `${vh}px`);
+	window.addEventListener("resize", onResize);
+	window.addEventListener("touchstart", onTouchStart);
+	window.addEventListener("touchmove", onTouchMove);
+	window.addEventListener("touchend", onTouchEnd);
+	window.addEventListener("touchcancel", onTouchEnd);
+	window.addEventListener("popstate", closeMenu);
+	window.addEventListener("scroll", onScroll);
 });
 onBeforeUnmount(() => {
 	isAnimated = false;
-	window.removeEventListener('resize', onResize);
-	window.removeEventListener('touchstart', onTouchStart);
-	window.removeEventListener('touchmove', onTouchMove);
-	window.removeEventListener('touchend', onTouchEnd);
-	window.removeEventListener('touchcancel', onTouchEnd);
-	window.removeEventListener('popstate', closeMenu);
+	window.removeEventListener("resize", onResize);
+	window.removeEventListener("touchstart", onTouchStart);
+	window.removeEventListener("touchmove", onTouchMove);
+	window.removeEventListener("touchend", onTouchEnd);
+	window.removeEventListener("touchcancel", onTouchEnd);
+	window.removeEventListener("popstate", closeMenu);
 });
 </script>
