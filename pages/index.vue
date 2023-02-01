@@ -9,7 +9,7 @@
 		<div class="pickup-text">ピックアップ記事</div>
 		<div class="pickup-posts" v-for="post in pickupPosts">
 			<PostCard v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date" v-bind:tags="post.tags"
-				v-bind:image="post.image" class="post-card" />
+				class="post-card" />
 		</div>
 	</div>
 </template>

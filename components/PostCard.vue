@@ -75,6 +75,6 @@
 </style>
 
 <script setup lang="ts">
-type Props = { title: string, date: string, tags: string[], image: string, path: string }
-const { title, date, tags, image, path } = defineProps<Props>();
+type Props = { title: string, date: string, tags: string[], path: string }
+const { title, date, tags, path } = defineProps<Props>();
 </script>
