@@ -4,7 +4,7 @@ export default defineNuxtConfig({
 	modules: ['@nuxt/content'],
 	content: {
 		markdown: {
-			rehypePlugins: ['rehype-quotes', 'rehype-adjust-aki']
+			rehypePlugins: ['rehype-quotes', 'rehype-adjust-aki'],
 		}
 	},
 	runtimeConfig: {
