@@ -1,6 +1,5 @@
 <template>
 	<div class="post">
-		<img class="top-image" v-bind:src="data.image" v-bind:alt="`Thumbnail: ${data.title}`">
 		<h1 class="top-title" v-bind:id="data.title">{{ data.title }}</h1>
 		<div class="post-tags-date">
 			<NuxtLink class="post-tag" v-for="tag in data.tags" v-bind:to="`/posts?tag=${tag}`">{{ tag }}</NuxtLink>
@@ -18,13 +17,6 @@
 .post {
 	@extend .font-body;
 	padding: 0 16px;
-
-	.top-image {
-		width: 100%;
-		height: 160px;
-		border-radius: 12px;
-		object-fit: cover;
-	}
 
 	.top-title {
 		@extend .font-title-large;
