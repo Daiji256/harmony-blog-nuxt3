@@ -51,14 +51,6 @@
 const siteName = useRuntimeConfig().siteName;
 useHead({
 	title: siteName,
-	meta: [
-		{ property: 'og:type', content: 'blog' },
-		{ property: 'og:title', content: siteName },
-		{ property: 'og:image', content: useRuntimeConfig().baseUrl + '/images/sample-00-ogp.jpg' },
-		{ property: 'og:url', content: useRuntimeConfig().baseUrl + useRoute().path },
-		{ property: 'og:description', content: useRuntimeConfig().siteDescription },
-		{ name: 'description', content: useRuntimeConfig().siteDescription },
-	],
 });
 
 const posts = await queryContent('posts')
