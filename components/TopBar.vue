@@ -41,16 +41,6 @@
 					すべての投稿
 				</div>
 			</NuxtLink>
-			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/photo-gallery") }' v-on:click="closeMenu"
-				to="/photo-gallery">
-				<div class="logo">
-					<svg height="24" width="24">
-						<path fill="currentColor"
-							d="M3 11V3H11V11ZM3 21V13H11V21ZM13 11V3H21V11ZM13 21V13H21V21ZM5 9H9V5H5ZM15 9H19V5H15ZM15 19H19V15H15ZM5 19H9V15H5ZM15 9ZM15 15ZM9 15ZM9 9Z" />
-					</svg>
-				</div>
-				<div class="text">ギャラリー</div>
-			</NuxtLink>
 			<hr class="line">
 			<NuxtLink class="drawer-menu" v-bind:class='{ "active": getIsActive("/privacy-policy") }' v-on:click="closeMenu"
 				to="/privacy-policy">
