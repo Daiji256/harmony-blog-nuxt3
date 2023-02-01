@@ -173,17 +173,7 @@ const path = useRoute().path;
 const content = await useAsyncData(path, () => queryContent(path).findOne());
 const data = content.data;
 const title = data.value.title + ' - ' + useRuntimeConfig().siteName;
-const ogp = useRuntimeConfig().baseUrl + data.value.image.replace('.webp', '-ogp.jpg');
-const description = data.value.description;
 useHead({
 	title: title,
-	meta: [
-		{ property: 'og:type', content: 'article' },
-		{ property: 'og:title', content: title },
-		{ property: 'og:image', content: ogp },
-		{ property: 'og:url', content: useRuntimeConfig().baseUrl + useRoute().path },
-		{ property: 'og:description', content: description },
-		{ name: 'description', content: description },
-	],
 });
 </script>
