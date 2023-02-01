@@ -119,7 +119,7 @@
 </style>
 
 <script setup lang="ts">
-const title = 'すべての投稿' + ' - ' + useRuntimeConfig().siteName;
+const title = `すべての投稿 - ${useRuntimeConfig().siteName}`;
 useHead({
 	title: title,
 });

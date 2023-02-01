@@ -165,7 +165,7 @@
 const path = useRoute().path;
 const content = await useAsyncData(path, () => queryContent(path).findOne());
 const data = content.data;
-const title = data.value.title + ' - ' + useRuntimeConfig().siteName;
+const title = `${data.value.title} - ${useRuntimeConfig().siteName}`;
 useHead({
 	title: title,
 });
