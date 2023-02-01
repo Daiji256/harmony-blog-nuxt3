@@ -4,12 +4,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.post-card {
-  margin-bottom: 8px;
-}
-</style>
-
 <script setup lang="ts">
 type Props = { date: string };
 const { date } = defineProps<Props>();
