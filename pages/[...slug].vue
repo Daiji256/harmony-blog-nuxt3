@@ -124,13 +124,6 @@
 		}
 	}
 
-	img {
-		width: 100%;
-		border-radius: 12px;
-		aspect-ratio: $golden-ratio;
-		object-fit: cover;
-	}
-
 	ul,
 	ol {
 		margin: 0;
