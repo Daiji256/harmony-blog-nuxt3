@@ -143,7 +143,7 @@ const tags = Object.entries(tagsCount)
 const visibleTags = ref(false);
 const onClickFilter = () => {
 	visibleTags.value = !visibleTags.value;
-}
+};
 
 const getQueryTags = () => {
 	return [useRoute().query.tag].flat().filter(tag => tag != null);
@@ -151,7 +151,7 @@ const getQueryTags = () => {
 const queryTags = ref(getQueryTags());
 const isSelected = (tag) => {
 	return queryTags.value.includes(tag);
-}
+};
 const onClickTag = (tag) => {
 	const newQueryTags = queryTags.value;
 	if (isSelected(tag)) {
@@ -160,12 +160,12 @@ const onClickTag = (tag) => {
 		newQueryTags.push(tag);
 	}
 	useRouter().push({ query: { tag: newQueryTags } });
-}
+};
 watch(() => useRoute().query, () => {
 	queryTags.value = getQueryTags();
 });
 
 const containsTag = (postTags) => {
 	return queryTags.value.length === 0 || queryTags.value.some(tag => postTags.includes(tag));
-}
+};
 </script>
