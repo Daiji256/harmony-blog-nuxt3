@@ -1,0 +1,47 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    font-size: 40px;
+    line-height: 60px;
+}
+
+.box {
+    background-image: url("box.svg");
+    background-size: 40px 60px;
+    background-repeat: repeat;
+    width: 800px;
+    margin-bottom: 20px;
+}
+
+.aa--l-pm,
+.aa--r-pm,
+.aa--m-pm {
+    font-feature-settings: "palt";
+}
+
+.aa--jw-aki::after {
+    font-size: calc(25% / 0.224);
+    vertical-align: top;
+    content: " ";
+}
+
+.aa--lr-pm-aki::after {
+    font-size: calc(50% / 0.224);
+    vertical-align: top;
+    content: " ";
+}
+
+.aa--m-pm-aki::after {
+    font-size: calc(25% / 0.224);
+    vertical-align: top;
+    content: " ";
+}
+
+.aa--d-pm-aki::after {
+    font-size: calc(100% / 0.224);
+    vertical-align: top;
+    content: " ";
+}
