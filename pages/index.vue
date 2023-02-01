@@ -60,6 +60,6 @@ const posts = await queryContent('posts')
 	.find();
 
 const pickupPosts = posts.filter(post => {
-	return useRuntimeConfig().pickupPosts.some(path => path === post._path);
+	return useRuntimeConfig().pickupPosts.some((path: string) => path === post._path);
 });
 </script>
