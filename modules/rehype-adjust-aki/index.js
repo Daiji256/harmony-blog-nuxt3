@@ -2,55 +2,36 @@ import flatMap from "unist-util-flatmap";
 
 export default function rehypeAdjustAki() {
   const adjustAki = (tree) => {
-    const JC = "ぁ-んァ-ヶ一-龠ー";
-    const WC = "0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ";
-    const LY = "（〔［｛〈《「『【｟〘〖〝";
-    const RY = "）〕］｝〉》」』】｠〙〗〟。．、，";
-    const MY = "・：；";
-    const DP = "！？‼⁇⁈⁉";
-    const FS = "　";
+    const jpn = "ぁ-んァ-ヶ一-龠ー";
+    const wrn = "0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ";
+    const lPm = "（〔［｛〈《「『【｟〘〖〝";
+    const rPm = "）〕］｝〉》」』】｠〙〗〟。．、，";
+    const mPm = "・：；";
+    const dPm = "！？‼⁇⁈⁉";
+    const emSp = "　";
 
-    const jwaClassName = "aa--jw-aki";
-    const jwaBetweenRegexp = new RegExp(
-      "[" + JC + "][" + WC + "]|[" + WC + "][" + JC + "]"
-    );
-    insertAkiBetween(tree, jwaBetweenRegexp, jwaClassName);
+    const jwAkiSC = "aa--jw-aki";
+    insertAkiBetween(tree, new RegExp(`[${jpn}][${wrn}]|[${wrn}][${jpn}]`), jwAkiSC);
 
-    const lryaClassName = "aa--lr-pm-aki";
-    const lryaFirstRegexp = new RegExp("^[" + LY + "]");
-    const lryaLastRegexp = new RegExp("[" + RY + "]$");
-    const lryaBetweenRegexp = new RegExp(
-      "[^" + LY + MY + "][" + LY + "]|[" + RY + "][^" + RY + MY + "]"
-    );
-    insertAkiFirst(tree, lryaFirstRegexp, lryaClassName);
-    insertAkiLast(tree, lryaLastRegexp, lryaClassName);
-    insertAkiBetween(tree, lryaBetweenRegexp, lryaClassName);
+    const lrPmAkiSC = "aa--lr-pm-aki";
+    insertAkiFirst(tree, new RegExp(`^[${lPm}]`), lrPmAkiSC);
+    insertAkiLast(tree, new RegExp(`[${rPm}]$`), lrPmAkiSC);
+    insertAkiBetween(tree, new RegExp(`[^${lPm}${mPm}][${lPm}]|[${rPm}][^${rPm}${mPm}]`), lrPmAkiSC);
 
-    const myaClassName = "aa--m-pm-aki";
-    const myaFirstRegexp = new RegExp("^[" + MY + "]");
-    const myaLastRegexp = new RegExp("[" + MY + "]$");
-    const myaBetweenRegexp = new RegExp(
-      "[^" + MY + "][" + MY + "]|[" + MY + "][^" + MY + "]"
-    );
-    insertAkiFirst(tree, myaFirstRegexp, myaClassName);
-    insertAkiLast(tree, myaLastRegexp, myaClassName);
-    insertAkiBetween(tree, myaBetweenRegexp, myaClassName);
+    const mPmAkiSC = "aa--m-pm-aki";
+    insertAkiFirst(tree, new RegExp(`^[${mPm}]`), mPmAkiSC);
+    insertAkiLast(tree, new RegExp(`[${mPm}]$`), mPmAkiSC);
+    insertAkiBetween(tree, new RegExp(`[^${mPm}][${mPm}]|[${mPm}][^${mPm}]`), mPmAkiSC);
 
-    const lyeClassName = "aa--l-pm";
-    const lyeRegexp = new RegExp("[" + LY + "]");
-    eraseAki(tree, lyeRegexp, lyeClassName);
+    const dPmAkiSC = "aa--d-pm-aki";
+    replaceDpAki(tree, new RegExp(`[${dPm}]${emSp}`), dPmAkiSC);
 
-    const ryeClassName = "aa--r-pm";
-    const ryeRegexp = new RegExp("[" + RY + "]");
-    eraseAki(tree, ryeRegexp, ryeClassName);
-
-    const myeClassName = "aa--m-pm";
-    const myeRegexp = new RegExp("[" + MY + "]");
-    eraseAki(tree, myeRegexp, myeClassName);
-
-    const dpaClassName = "aa--d-pm-aki";
-    const dpaRegexp = new RegExp("[" + DP + "][" + FS + "]");
-    replaceDpAki(tree, dpaRegexp, dpaClassName);
+    const lPmSC = "aa--l-pm";
+    const rPmSC = "aa--r-pm";
+    const mPmSC = "aa--m-pm";
+    eraseAki(tree, new RegExp(`[${lPm}]`), lPmSC);
+    eraseAki(tree, new RegExp(`[${rPm}]`), rPmSC);
+    eraseAki(tree, new RegExp(`[${mPm}]`), mPmSC);
   };
 
   const insertAkiFirst = (tree, regexp, className) => {
