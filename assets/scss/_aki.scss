@@ -1,59 +1,29 @@
-.adjust-aki-yakumono {
-    font-feature-settings: "palt" 1;
+.aa--l-pm,
+.aa--r-pm,
+.aa--m-pm {
+    font-feature-settings: "palt";
 }
 
-.adjust-aki-left-bracket {
-    margin-left: -0.5em;
-}
-
-.adjust-aki-right-bracket {
-    margin-right: -0.5em;
-}
-
-.adjust-aki-yakumono-aki::after {
-    font-size: 200%;
+.aa--jw-aki::after {
+    font-size: calc(25% / 0.224);
     vertical-align: top;
     content: " ";
 }
 
-.adjust-aki-mixed-aki::after {
-    font-size: 100%;
+.aa--lr-pm-aki::after {
+    font-size: calc(50% / 0.224);
     vertical-align: top;
     content: " ";
 }
 
-.adjust-aki-aki-1::after {
-    font-size: 400%;
+.aa--m-pm-aki::after {
+    font-size: calc(25% / 0.224);
     vertical-align: top;
     content: " ";
 }
 
-.adjust-aki-aki-2::after {
-    font-size: 200%;
-    vertical-align: top;
-    content: " ";
-}
-
-.adjust-aki-aki-3::after {
-    font-size: 150%;
-    vertical-align: top;
-    content: " ";
-}
-
-.adjust-aki-aki-4::after {
-    font-size: 100%;
-    vertical-align: top;
-    content: " ";
-}
-
-.adjust-aki-aki-6::after {
-    font-size: 75%;
-    vertical-align: top;
-    content: " ";
-}
-
-.adjust-aki-aki-8::after {
-    font-size: 50%;
+.aa--d-pm-aki::after {
+    font-size: calc(100% / 0.224);
     vertical-align: top;
     content: " ";
 }
