@@ -60,10 +60,6 @@ body {
 <script setup lang="ts">
 useHead({
 	htmlAttrs: { lang: "ja", prefix: "og: http://ogp.me/ns#" },
-	meta: [
-		{ property: "og:site_name", content: useRuntimeConfig().siteName },
-		{ name: "twitter:card", content: "summary_large_image" },
-	],
 	link: [
 		{
 			rel: "shortcut icon",
