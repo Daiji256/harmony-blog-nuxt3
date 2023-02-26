@@ -22,13 +22,14 @@ footer {
   margin: 0 auto;
   padding: 8px 16px;
   width: min(100%, $screen-medium-min);
-  justify-content: space-between;
 
   .copyright {
     margin-right: 8px;
   }
 
   .links {
+    margin-left: auto;
+
     .link {
       display: block;
       margin-bottom: 8px;
