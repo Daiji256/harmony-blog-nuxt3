@@ -1,5 +1,15 @@
 <template>
-  <footer>&copy; 2022 Daiji256</footer>
+  <footer>
+    <div class="copyright">&copy; 2022 Daiji256</div>
+    <div class="links">
+      <div class="link">
+        <NuxtLink to="/privacy-policy">プライバシーポリシー</NuxtLink>
+      </div>
+      <div class="link">
+        <a target="_blank" rel="noopener" href="https://example.com">お問い合わせ</a>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <style lang="scss" scoped>
@@ -9,8 +19,32 @@ footer {
   @extend .font-label-medium;
   display: flex;
   bottom: 0;
-  height: 96px;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
+  padding: 8px 16px;
+  width: min(100%, $screen-medium-min);
+  justify-content: space-between;
+
+  .copyright {
+    margin-right: 8px;
+  }
+
+  .links {
+    .link {
+      display: block;
+      margin-bottom: 8px;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        @media (hover: hover) {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
