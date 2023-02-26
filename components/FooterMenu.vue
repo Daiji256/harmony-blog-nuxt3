@@ -24,7 +24,7 @@ footer {
   width: min(100%, $screen-medium-min);
 
   .copyright {
-    margin-right: 8px;
+    margin-right: 32px;
   }
 
   .links {
