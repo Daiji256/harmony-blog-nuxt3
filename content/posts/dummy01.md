@@ -31,6 +31,15 @@ a'a'a'a"a"a"a
 あああ：；あああ  
 ：ああああああ；
 
+```c
+#include <stdio.h>
+
+int main(void) {
+    printf("Hello, Word!\n");
+    return 0;
+}
+```
+
 ```
 あ "あ" あ
 あ 'あ' あ

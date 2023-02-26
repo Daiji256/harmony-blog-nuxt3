@@ -5,6 +5,10 @@ export default defineNuxtConfig({
 	content: {
 		markdown: {
 			rehypePlugins: ["rehype-quotes", "rehype-adjust-aki"],
+		},
+		highlight: {
+			theme: 'github-light',
+			preload: ["c", "js"],
 		}
 	},
 	runtimeConfig: {

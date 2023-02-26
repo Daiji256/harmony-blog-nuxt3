@@ -14,7 +14,7 @@
 	margin: 0 auto;
 	padding-top: 64px;
 	width: min(100%, $screen-medium-min);
-	min-height: calc(100vh - 96px);
+	min-height: calc(100vh - 64px);
 }
 </style>
 
@@ -77,7 +77,7 @@ useHead({
 		},
 		{
 			rel: "stylesheet",
-			href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap",
+			href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+Mono&display=swap",
 		},
 	],
 });
