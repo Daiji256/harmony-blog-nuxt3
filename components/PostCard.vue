@@ -1,76 +1,76 @@
 <template>
-	<div>
-		<NuxtLink class="post-card-click" v-bind:to="path">
-			<div class="post-card-main">
-				<div class="post-info">
-					<div class="post-title">{{ title }}</div>
-					<div class="post-tags-date">
-						<div class="post-tag" v-for="tag in tags">{{ tag }}</div>
-						<Date v-bind:date="date" class="post-date" />
-					</div>
-				</div>
-			</div>
-		</NuxtLink>
-	</div>
+  <div>
+    <NuxtLink class="post-card-click" v-bind:to="path">
+      <div class="post-card-main">
+        <div class="post-info">
+          <div class="post-title">{{ title }}</div>
+          <div class="post-tags-date">
+            <div class="post-tag" v-for="tag in tags">{{ tag }}</div>
+            <Date v-bind:date="date" class="post-date" />
+          </div>
+        </div>
+      </div>
+    </NuxtLink>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 @import "../assets/scss/variable";
 
 .post-card-click {
-	text-decoration: none;
-	color: inherit;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-	.post-card-main {
-		width: 100%;
-		overflow: hidden;
-		border-radius: 12px;
-		background-color: $color-surface;
-		box-shadow: $my-box-shadow-level-2;
+  .post-card-main {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: $color-surface;
+    box-shadow: $my-box-shadow-level-2;
 
-		.post-info {
-			margin: 8px 16px 12px 16px;
+    .post-info {
+      margin: 8px 16px 12px 16px;
 
-			.post-title {
-				@extend .font-title-small;
-			}
+      .post-title {
+        @extend .font-title-small;
+      }
 
-			.post-tags-date {
-				@extend .font-label-small;
-				color: $color-on-surface-variant;
-				margin: 4px -8px 0 0;
+      .post-tags-date {
+        @extend .font-label-small;
+        color: $color-on-surface-variant;
+        margin: 4px -8px 0 0;
 
-				&::after {
-					content: "";
-					clear: both;
-					display: block;
-				}
+        &::after {
+          content: "";
+          clear: both;
+          display: block;
+        }
 
-				.post-tag {
-					display: inline-block;
-					margin-right: 8px;
-				}
+        .post-tag {
+          display: inline-block;
+          margin-right: 8px;
+        }
 
-				.post-date {
-					float: right;
-					margin-right: 8px;
-				}
-			}
-		}
-	}
+        .post-date {
+          float: right;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
 
-	@media (hover: hover) {
-		&:hover .post-card-main {
-			box-shadow: $my-box-shadow-level-1;
-			background-color: rgba($color-on-surface-variant, $state-hover);
-		}
-	}
+  @media (hover: hover) {
+    &:hover .post-card-main {
+      box-shadow: $my-box-shadow-level-1;
+      background-color: rgba($color-on-surface-variant, $state-hover);
+    }
+  }
 
-	&:active .post-card-main {
-		box-shadow: $my-box-shadow-level-1;
-		background-color: rgba($color-on-surface-variant, $state-pressed);
-	}
+  &:active .post-card-main {
+    box-shadow: $my-box-shadow-level-1;
+    background-color: rgba($color-on-surface-variant, $state-pressed);
+  }
 }
 </style>
 

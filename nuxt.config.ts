@@ -1,19 +1,19 @@
 export default defineNuxtConfig({
-	app: { pageTransition: { name: "page", mode: "out-in" } },
-	css: ["modern-css-reset"],
-	modules: ["@nuxt/content"],
-	content: {
-		markdown: {
-			rehypePlugins: ["rehype-quotes", "rehype-adjust-aki"],
-		},
-		highlight: {
-			theme: 'github-light',
-			preload: ["c", "js"],
-		}
-	},
-	runtimeConfig: {
-		public: {
-			siteName: "Kumi Blog",
-		}
-	},
+  app: { pageTransition: { name: "page", mode: "out-in" } },
+  css: ["modern-css-reset"],
+  modules: ["@nuxt/content"],
+  content: {
+    markdown: {
+      rehypePlugins: ["rehype-quotes", "rehype-adjust-aki"],
+    },
+    highlight: {
+      theme: 'github-light',
+      preload: ["c", "js"],
+    }
+  },
+  runtimeConfig: {
+    public: {
+      siteName: "Kumi Blog",
+    }
+  },
 })
