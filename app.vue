@@ -13,7 +13,7 @@
 .main-wrapper {
   margin: 0 auto;
   padding-top: 64px;
-  width: min(100%, $screen-medium-min);
+  width: min(100%, $screen-wrapper-max);
   min-height: calc(100vh - 64px);
 }
 </style>

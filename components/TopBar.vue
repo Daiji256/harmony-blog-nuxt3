@@ -43,7 +43,7 @@ header {
     height: 64px;
     margin: 0 auto;
     padding: 0 4px;
-    width: min(100%, $screen-medium-min);
+    width: min(100%, $screen-wrapper-max);
 
     .title {
       color: inherit;
@@ -118,7 +118,7 @@ header {
     display: flex;
     position: fixed;
     top: 56px;
-    right: calc((100% - min(100%, $screen-medium-min)) * 0.5 + 16px);
+    right: calc((100% - min(100%, $screen-wrapper-max)) * 0.5 + 16px);
     flex-flow: column;
     padding: 8px 0;
     white-space: nowrap;

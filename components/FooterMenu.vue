@@ -21,7 +21,7 @@ footer {
   bottom: 0;
   margin: 0 auto;
   padding: 8px 16px;
-  width: min(100%, $screen-medium-min);
+  width: min(100%, $screen-wrapper-max);
 
   .copyright {
     margin-right: 32px;
