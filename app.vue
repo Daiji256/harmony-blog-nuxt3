@@ -1,7 +1,7 @@
 <template>
   <TopBar />
   <div class="main-wrapper">
-    <NuxtLoadingIndicator color="#ba1d00" />
+    <LoadingIndicator />
     <NuxtPage />
   </div>
   <FooterMenu />
