@@ -16,12 +16,13 @@
 @import "../assets/scss/variable";
 
 footer {
-  @extend .font-label-medium;
+  @extend .font-label-large;
   display: flex;
   bottom: 0;
   margin: 0 auto;
   padding: 8px 16px;
   width: min(100%, $screen-wrapper-max);
+  min-height: 72px;
 
   .copyright {
     margin-right: 32px;

@@ -51,7 +51,7 @@ header {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
       .title-content {
-        @extend .font-label-large;
+        @extend .font-title-medium;
         display: inline-flex;
         height: 48px;
         padding: 0 12px;
@@ -151,7 +151,7 @@ header {
       }
 
       .text {
-        @extend .font-label-medium;
+        @extend .font-label-large;
         display: grid;
         align-items: center;
       }

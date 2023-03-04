@@ -2,67 +2,62 @@
 $font-family-sans-serif: "Noto Sans JP", -apple-system, sans-serif;
 $font-family-monospace: "Noto Sans Mono", "Noto Sans JP", monospace;
 
-/* Master Size */
-$font-size-xxl: 3.2rem;
-$font-size-xl: 2.8rem;
-$font-size-l: 2.4rem;
-$font-size-m: 1.6rem;
-$font-size-s: 1.4rem;
-$font-size-xs: 1.2rem;
-
-/* Master Line Height */
-$font-line-height-xxl: 4.8rem;
-$font-line-height-xl: 3.2rem;
-$font-line-height-l: 3.2rem;
-$font-line-height-m: 2.4rem;
-$font-line-height-s: 1.6rem;
-$font-line-height-xs: 1.6rem;
-
-/* Master Weight */
-$font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-bold: 700;
-
 .font-body {
-  font-size: $font-size-m;
-  line-height: $font-line-height-m;
-  font-weight: $font-weight-regular;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
 }
 
-/* Title */
+.font-headline-large {
+  font-size: 3.2rem;
+  line-height: 4.0rem;
+  font-weight: 400;
+}
+
+.font-headline-medium {
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  font-weight: 400;
+}
+
+.font-headline-small {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 400;
+}
+
 .font-title-large {
-  font-size: $font-size-xxl;
-  line-height: $font-line-height-xxl;
-  font-weight: $font-weight-regular;
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  font-weight: 400;
 }
 
 .font-title-medium {
-  font-size: $font-size-xl;
-  line-height: $font-line-height-xl;
-  font-weight: $font-weight-regular;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
 }
 
 .font-title-small {
-  font-size: $font-size-l;
-  line-height: $font-line-height-l;
-  font-weight: $font-weight-regular;
+  font-size: 1.4rem;
+  line-height: 2.0rem;
+  font-weight: 500;
 }
 
-/* Label */
 .font-label-large {
-  font-size: $font-size-m;
-  line-height: $font-line-height-m;
-  font-weight: $font-weight-medium;
+  font-size: 1.4rem;
+  line-height: 2.0rem;
+  font-weight: 500;
 }
 
 .font-label-medium {
-  font-size: $font-size-s;
-  line-height: $font-line-height-s;
-  font-weight: $font-weight-medium;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 500;
 }
 
 .font-label-small {
-  font-size: $font-size-xs;
-  line-height: $font-line-height-xs;
-  font-weight: $font-weight-medium;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  font-weight: 500;
 }

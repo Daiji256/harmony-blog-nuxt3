@@ -33,11 +33,11 @@
       margin: 8px 16px 12px 16px;
 
       .post-title {
-        @extend .font-title-small;
+        @extend .font-title-large;
       }
 
       .post-tags-date {
-        @extend .font-label-small;
+        @extend .font-label-large;
         color: $color-on-surface-variant;
         margin: 4px -8px 0 0;
 

@@ -19,13 +19,13 @@
   padding: 0 16px;
 
   .top-title {
-    @extend .font-title-large;
+    @extend .font-headline-large;
     margin: -56px 0 0 0;
     padding: 64px 0 0 0;
   }
 
   .post-tags-date {
-    @extend .font-label-medium;
+    @extend .font-label-large;
     line-height: 3.2rem;
     margin-right: -8px;
 
@@ -69,18 +69,18 @@
 
 .doc-body {
   h1 {
-    @extend .font-title-large;
+    @extend .font-headline-large;
   }
 
   h2 {
-    @extend .font-title-medium;
+    @extend .font-headline-medium;
   }
 
   h3,
   h4,
   h5,
   h6 {
-    @extend .font-title-small;
+    @extend .font-headline-small;
   }
 
   h2,
