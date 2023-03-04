@@ -15,7 +15,7 @@
 @import "../assets/scss/variable";
 
 .post {
-  @extend .font-body;
+  @extend .font-body-large;
   padding: 0 16px;
 
   .top-title {

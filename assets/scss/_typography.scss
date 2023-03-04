@@ -2,27 +2,39 @@
 $font-family-sans-serif: "Noto Sans JP", -apple-system, sans-serif;
 $font-family-monospace: "Noto Sans Mono", "Noto Sans JP", monospace;
 
-.font-body {
+.font-body-large {
   font-size: 1.6rem;
   line-height: 2.4rem;
   font-weight: 400;
 }
 
-.font-headline-large {
-  font-size: 3.2rem;
-  line-height: 4.0rem;
+.font-body-medium {
+  font-size: 1.4rem;
+  line-height: 2.0rem;
   font-weight: 400;
 }
 
-.font-headline-medium {
+.font-body-small {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 400;
+}
+
+.font-headline-large {
   font-size: 2.8rem;
   line-height: 3.6rem;
   font-weight: 400;
 }
 
-.font-headline-small {
+.font-headline-medium {
   font-size: 2.4rem;
   line-height: 3.2rem;
+  font-weight: 400;
+}
+
+.font-headline-small {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
   font-weight: 400;
 }
 
