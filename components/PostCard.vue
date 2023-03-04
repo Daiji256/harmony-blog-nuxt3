@@ -1,7 +1,7 @@
 <template>
   <div>
-    <NuxtLink class="post-card-click" v-bind:to="path">
-      <div class="post-card-main">
+    <NuxtLink class="post-card" v-bind:to="path">
+      <div class="post-card-content">
         <div class="post-info">
           <div class="post-title">{{ title }}</div>
           <div class="post-tags-date">
@@ -17,12 +17,12 @@
 <style lang="scss" scoped>
 @import "../assets/scss/variable";
 
-.post-card-click {
+.post-card {
   text-decoration: none;
   color: inherit;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-  .post-card-main {
+  .post-card-content {
     width: 100%;
     overflow: hidden;
     border-radius: 12px;
@@ -61,13 +61,13 @@
   }
 
   @media (hover: hover) {
-    &:hover .post-card-main {
-      box-shadow: $my-box-shadow-level-1;
+    &:hover .post-card-content {
+      box-shadow: $my-box-shadow-level-2;
       background-color: rgba($color-on-surface-variant, $state-hover);
     }
   }
 
-  &:active .post-card-main {
+  &:active .post-card-content {
     box-shadow: $my-box-shadow-level-1;
     background-color: rgba($color-on-surface-variant, $state-pressed);
   }
