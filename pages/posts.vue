@@ -16,8 +16,8 @@
       </div>
     </div>
     <div v-for="post in posts">
-      <PostCard v-if="containsTag(post.tags)" v-bind:path="post._path" v-bind:title="post.title" v-bind:date="post.date"
-        v-bind:tags="post.tags" class="post-card" />
+      <PostCard v-if="containsTag(post.tags)" v-bind:path="post._path" v-bind:title="post.title"
+        v-bind:description="post.description" v-bind:date="post.date" v-bind:tags="post.tags" class="post-card" />
     </div>
   </div>
 </template>
@@ -127,7 +127,7 @@ useHead({
 const posts = await queryContent("posts")
   .where({ "_draft": false })
   .sort({ "date": -1 })
-  .only(["_path", "title", "date", "tags", "image"])
+  .only(["_path", "title", "description", "date", "tags", "image"])
   .find();
 
 const tagsCount: number[] = [posts].flat().map(post => post.tags).flat().reduce(

@@ -2,12 +2,11 @@
   <div>
     <NuxtLink class="post-card" v-bind:to="path">
       <div class="post-card-content">
-        <div class="post-info">
-          <div class="post-title">{{ title }}</div>
-          <div class="post-tags-date">
-            <div class="post-tag" v-for="tag in tags">{{ tag }}</div>
-            <Date v-bind:date="date" class="post-date" />
-          </div>
+        <div class="post-title">{{ title }}</div>
+        <div class="post-description">{{ description }}</div>
+        <div class="post-sup-info">
+          <div class="post-tag" v-for="tag in tags">{{ tag }}</div>
+          <Date class="post-date" v-bind:date="date" />
         </div>
       </div>
     </NuxtLink>
@@ -19,43 +18,47 @@
 
 .post-card {
   text-decoration: none;
-  color: inherit;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   .post-card-content {
     width: 100%;
-    overflow: hidden;
     border-radius: 12px;
+    padding: 12px 16px;
     background-color: $color-surface;
     box-shadow: $my-box-shadow-level-2;
 
-    .post-info {
-      margin: 8px 16px 12px 16px;
+    .post-title {
+      @extend .font-title-large;
+      color: $color-on-surface;
+    }
 
-      .post-title {
-        @extend .font-title-large;
+    .post-description {
+      @extend .font-body-medium;
+      color: $color-on-surface;
+      margin-top: 8px;
+    }
+
+    .post-sup-info {
+      @extend .font-label-medium;
+      color: $color-on-surface-variant;
+      margin-top: 12px;
+
+      .post-tag {
+        display: inline-block;
       }
 
-      .post-tags-date {
-        @extend .font-label-large;
-        color: $color-on-surface-variant;
-        margin: 4px -8px 0 0;
+      .post-date {
+        display: inline-block;
+      }
 
-        &::after {
-          content: "";
-          clear: both;
-          display: block;
-        }
+      .post-tag+.post-tag::before {
+        content: "/";
+        margin: 0 4px;
+      }
 
-        .post-tag {
-          display: inline-block;
-          margin-right: 8px;
-        }
-
-        .post-date {
-          float: right;
-          margin-right: 8px;
-        }
+      .post-tag+.post-date::before {
+        content: "･";
+        margin: 0 8px;
       }
     }
   }
@@ -75,6 +78,6 @@
 </style>
 
 <script setup lang="ts">
-type Props = { title: string, date: string, tags: string[], path: string }
-const { title, date, tags, path } = defineProps<Props>();
+type Props = { title: string, description: string, date: string, tags: string[], path: string }
+const { title, description, date, tags, path } = defineProps<Props>();
 </script>
