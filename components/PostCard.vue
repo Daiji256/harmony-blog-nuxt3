@@ -53,12 +53,16 @@
 
       .post-tag+.post-tag::before {
         content: "/";
-        margin: 0 4px;
+        display: inline-block;
+        width: 12px;
+        text-align: center;
       }
 
       .post-tag+.post-date::before {
         content: "･";
-        margin: 0 8px;
+        display: inline-block;
+        width: 16px;
+        text-align: center;
       }
     }
   }
