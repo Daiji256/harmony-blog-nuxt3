@@ -1,13 +1,14 @@
 <template>
   <div class="post">
-    <h1 class="top-title" v-bind:id="data.title">{{ data.title }}</h1>
-    <div class="post-tags-date">
-      <NuxtLink class="post-tag" v-for="tag in data.tags" v-bind:to="`/posts?tag=${tag}`">{{ tag }}</NuxtLink>
-      <Date v-bind:date="data.date" class="post-date" />
-    </div>
-    <div class="doc-body">
-      <ContentRenderer v-bind:value="data" />
-    </div>
+    <ContentRenderer v-bind:value="data">
+      <h1 class="post-title" v-bind:id="data.title">{{ data.title }}</h1>
+      <div class="post-sup-info">
+        <!-- TODO: リンク先を変更する -->
+        <NuxtLink class="post-tag" v-for="tag in data.tags" v-bind:to="`/posts?tag=${tag}`">{{ tag }}</NuxtLink>
+        <Date v-bind:date="data.date" class="post-date" />
+      </div>
+      <ContentRendererMarkdown class="doc-body" v-bind:value="data" />
+    </ContentRenderer>
   </div>
 </template>
 
@@ -18,26 +19,19 @@
   @extend .font-body-large;
   padding: 0 16px;
 
-  .top-title {
+  .post-title {
     @extend .font-headline-large;
     margin: -56px 0 0 0;
     padding: 64px 0 0 0;
   }
 
-  .post-tags-date {
+  .post-sup-info {
     @extend .font-label-large;
     line-height: 3.2rem;
     margin-right: -8px;
 
-    &::after {
-      content: "";
-      clear: both;
-      display: block;
-    }
-
     .post-tag {
       display: inline-block;
-      margin-right: 8px;
       color: $color-link;
       text-decoration: none;
 
@@ -53,8 +47,24 @@
     }
 
     .post-date {
-      float: right;
-      margin-right: 8px;
+      display: inline-block;
+      color: $color-on-surface-variant;
+    }
+
+    .post-tag+.post-tag::before {
+      content: "/";
+      display: inline-block;
+      color: $color-on-surface-variant;
+      width: 12px;
+      text-align: center;
+    }
+
+    .post-tag+.post-date::before {
+      content: "･";
+      display: inline-block;
+      color: $color-on-surface-variant;
+      width: 16px;
+      text-align: center;
     }
   }
 
@@ -162,11 +172,9 @@
 </style>
 
 <script setup lang="ts">
-const path = useRoute().path;
-const content = await useAsyncData(path, () => queryContent(path).findOne());
-const data = content.data;
-const title = `${data.value.title} - ${useRuntimeConfig().siteName}`;
+const { path } = useRoute();
+const data = await queryContent(path).findOne();
 useHead({
-  title: title,
+  title: `${data.title} - ${useRuntimeConfig().siteName}`,
 });
 </script>
