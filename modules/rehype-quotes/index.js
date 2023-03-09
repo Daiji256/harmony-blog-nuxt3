@@ -2,10 +2,14 @@ import flatMap from "unist-util-flatmap";
 
 export default function rehypeQuotes() {
   const replaceQuotes = (tree) => {
+    const rPm = "）〕］｝〉》」』】｠〙〗〟。．、，";
+    const mPm = "・：；";
+    replaceText(tree, new RegExp(`([${rPm}${mPm}])'`, 'g'), '$1‘');
     replaceText(tree, / '/g, " ‘");
     replaceText(tree, /' /g, "’ ");
     replaceText(tree, /^'/g, "‘");
     replaceText(tree, /'/g, "’");
+    replaceText(tree, new RegExp(`([${rPm}${mPm}])"`, 'g'), '$1“');
     replaceText(tree, / "/g, " “");
     replaceText(tree, /" /g, "” ");
     replaceText(tree, /^"/g, "“");
