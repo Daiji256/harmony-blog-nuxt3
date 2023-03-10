@@ -41,7 +41,7 @@
     .post-sup-info {
       @extend .font-label-medium;
       color: $color-on-surface-variant;
-      margin-top: 12px;
+      margin-top: 8px;
 
       .post-tag {
         display: inline-block;
