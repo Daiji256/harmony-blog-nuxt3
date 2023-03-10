@@ -1,12 +1,18 @@
 <template>
   <footer>
-    <div class="copyright">&copy; 2022 Daiji256</div>
+    <div class="copyright">
+      <AdjustText text="&copy; 2022 Daiji256" />
+    </div>
     <div class="links">
       <div class="link">
-        <NuxtLink to="/privacy-policy">プライバシーポリシー</NuxtLink>
+        <NuxtLink to="/privacy-policy">
+          <AdjustText text="プライバシーポリシー" />
+        </NuxtLink>
       </div>
       <div class="link">
-        <a target="_blank" rel="noopener" href="https://example.com">お問い合わせ</a>
+        <a target="_blank" rel="noopener" href="https://example.com">
+          <AdjustText text="お問い合わせ" />
+        </a>
       </div>
     </div>
   </footer>

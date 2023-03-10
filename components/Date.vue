@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ dateStr }}
+    <AdjustText v-bind:text="dateStr" />
   </div>
 </template>
 

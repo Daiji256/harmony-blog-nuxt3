@@ -2,7 +2,9 @@
   <header>
     <div class="header-wrapper">
       <NuxtLink class="title" to="/">
-        <div class="title-content">{{ siteName }}</div>
+        <div class="title-content">
+          <AdjustText v-bind:text="siteName" />
+        </div>
       </NuxtLink>
       <div class="trailing-menu" v-on:click="onMenuClick">
         <div class="trailing-menu-content">
@@ -18,10 +20,14 @@
     <div class="scrim" v-on:click="onScrimClick"></div>
     <div class="menu">
       <NuxtLink class="menu-item" to="/">
-        <div class="text">ホーム</div>
+        <div class="text">
+          <AdjustText text="ホーム" />
+        </div>
       </NuxtLink>
       <NuxtLink class="menu-item" to="/posts">
-        <div class="text">すべての投稿</div>
+        <div class="text">
+          <AdjustText text="すべての投稿" />
+        </div>
       </NuxtLink>
     </div>
   </div>

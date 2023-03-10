@@ -2,10 +2,16 @@
   <div>
     <NuxtLink class="post-card" v-bind:to="path">
       <div class="post-card-content">
-        <div class="post-title">{{ title }}</div>
-        <div class="post-description">{{ description }}</div>
+        <div class="post-title">
+          <AdjustText v-bind:text="title" />
+        </div>
+        <div class="post-description">
+          <AdjustText v-bind:text="description" />
+        </div>
         <div class="post-sup-info">
-          <div class="post-tag" v-for="tag in tags">{{ tag }}</div>
+          <div class="post-tag" v-for="tag in tags">
+            <AdjustText v-bind:text="tag" />
+          </div>
           <Date class="post-date" v-bind:date="date" />
         </div>
       </div>
