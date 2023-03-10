@@ -3,8 +3,10 @@
     <ContentRenderer v-bind:value="data">
       <h1 class="post-title" v-bind:id="data.title">{{ data.title }}</h1>
       <div class="post-sup-info">
-        <!-- TODO: リンク先を変更する -->
-        <NuxtLink class="post-tag" v-for="tag in data.tags" v-bind:to="`/posts?tag=${tag}`">{{ tag }}</NuxtLink>
+        <div class="post-tag" v-for="tag in data.tags">
+          <!-- TODO: リンク先を変更する -->
+          <NuxtLink v-bind:to="`/posts?tag=${tag}`">{{ tag }}</NuxtLink>
+        </div>
         <Date v-bind:date="data.date" class="post-date" />
       </div>
       <ContentRendererMarkdown class="doc-body" v-bind:value="data" />
@@ -32,17 +34,20 @@
 
     .post-tag {
       display: inline-block;
-      color: $color-link;
-      text-decoration: none;
 
-      @media (hover: hover) {
-        &:hover {
+      a {
+        color: $color-link;
+        text-decoration: none;
+
+        @media (hover: hover) {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        &:active {
           text-decoration: underline;
         }
-      }
-
-      &:active {
-        text-decoration: underline;
       }
     }
 
