@@ -33,8 +33,6 @@
 
   .post-sup-info {
     @extend .font-label-large;
-    line-height: 3.2rem;
-    margin-right: -8px;
 
     .post-tag {
       display: inline-block;
