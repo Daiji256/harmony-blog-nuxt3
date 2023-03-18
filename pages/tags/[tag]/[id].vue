@@ -28,4 +28,3 @@ useHead({
   title: title,
 });
 </script>
-
