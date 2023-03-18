@@ -13,7 +13,7 @@
 @import "../assets/scss/variable";
 
 .tags {
-  margin: 16px 16px 8px 16px;
+  margin: 16px 8px 0px 16px;
 
   .tag {
     display: inline-block;
