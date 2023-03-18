@@ -6,7 +6,7 @@
           v-bind:description="post.description" v-bind:date="post.date" v-bind:tags="post.tags" />
       </div>
     </div>
-    <div class="post-list-chips">
+    <div v-if="postListSize > 1" class="post-list-chips">
       <span v-for="idx in postListSize">
         <span v-if="idx === id" class="post-list-chip selected">
           <div class="post-list-chip-content">{{ idx }}</div>
