@@ -3,7 +3,7 @@
     <NuxtLink class="tag" v-for="tag in tags" to="/"><!-- TODO: リンク先を設定-->
       <div class="tag-content">
         <AdjustText class="tag-name" v-bind:text="tag.name" />
-        <AdjustText class="tag-count" v-bind:text="tag.count" />
+        <AdjustText class="tag-count" v-bind:text="`${tag.count}`" />
       </div>
     </NuxtLink>
   </div>
@@ -85,6 +85,5 @@ const tagsCount: number[] = [posts].flat().map(post => post.tags).flat().reduce(
 );
 const tags = Object.entries(tagsCount)
   .map(([name, count]) => ({ name, count }))
-  .sort((a, b) => { return b.count - a.count })
-  .map(({ name, count }) => ({ name, count: `${count}` }));
+  .sort((a, b) => { return b.count - a.count });
 </script>
