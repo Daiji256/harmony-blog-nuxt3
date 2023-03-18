@@ -6,13 +6,13 @@
           v-bind:description="post.description" v-bind:date="post.date" v-bind:tags="post.tags" />
       </div>
     </div>
-    <div v-if="postListSize > 1" class="post-list-chips">
+    <div v-if="postListSize > 1" class="page-chips">
       <span v-for="idx in postListSize">
-        <span v-if="idx === id" class="post-list-chip selected">
-          <div class="post-list-chip-content">{{ idx }}</div>
+        <span v-if="idx === id" class="page-chip selected">
+          <div class="page-chip-content">{{ idx }}</div>
         </span>
-        <NuxtLink v-if="idx !== id" class="post-list-chip unselected" v-bind:to="`/posts/page-${idx}`">
-          <div class="post-list-chip-content">{{ idx }}</div>
+        <NuxtLink v-if="idx !== id" class="page-chip unselected" v-bind:to="`/posts/page-${idx}`">
+          <div class="page-chip-content">{{ idx }}</div>
         </NuxtLink>
       </span>
     </div>
@@ -30,17 +30,17 @@
   }
 }
 
-.post-list-chips {
+.page-chips {
   margin: 16px 8px 0 16px;
   text-align: center;
 
-  .post-list-chip {
+  .page-chip {
     display: inline-block;
     margin: 0 8px 16px 0;
     text-decoration: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-    .post-list-chip-content {
+    .page-chip-content {
       @extend .font-body-large;
       display: flex;
       justify-content: center;
@@ -53,21 +53,21 @@
   }
 
   .selected {
-    .post-list-chip-content {
+    .page-chip-content {
       color: $color-on-secondary-container;
       background-color: $color-secondary-container;
     }
   }
 
   .unselected {
-    .post-list-chip-content {
+    .page-chip-content {
       color: $color-on-surface;
       background-color: $color-surface;
     }
 
     @media (hover: hover) {
       &:hover {
-        .post-list-chip-content {
+        .page-chip-content {
           background-color: rgba($color-on-surface-variant, $state-hover);
           box-shadow: $my-box-shadow-level-2;
         }
@@ -75,7 +75,7 @@
     }
 
     &:active {
-      .post-list-chip-content {
+      .page-chip-content {
         background-color: rgba($color-on-surface-variant, $state-pressed);
       }
     }
