@@ -9,12 +9,12 @@ export default defineNuxtConfig({
     highlight: {
       theme: 'github-light',
       preload: ["c", "js"],
-    }
+    },
   },
   runtimeConfig: {
     public: {
       siteName: "Kumi Blog",
       limitPerPage: 10,
-    }
+    },
   },
 })
