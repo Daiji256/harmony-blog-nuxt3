@@ -19,14 +19,9 @@
   <div class="menu-and-scrim">
     <div class="scrim" v-on:click="onScrimClick"></div>
     <div class="menu">
-      <NuxtLink class="menu-item" to="/">
+      <NuxtLink class="menu-item" v-for="menuItem in menuItems" v-bind:to="menuItem.to">
         <div class="text">
-          <AdjustText text="ホーム" />
-        </div>
-      </NuxtLink>
-      <NuxtLink class="menu-item" to="/posts">
-        <div class="text">
-          <AdjustText text="すべての投稿" />
+          <AdjustText v-bind:text="menuItem.text" />
         </div>
       </NuxtLink>
     </div>
@@ -169,8 +164,13 @@ header {
 <script setup lang="ts">
 const siteName = useRuntimeConfig().siteName;
 
+const menuItems: { text: string, to: string }[] = [
+  { text: "ホーム", to: "/" },
+  { text: "すべての投稿", to: "/posts" },
+  { text: "すべてのタグ", to: "/tags" },
+];
 const _menuVisibleWidth = 240;
-const _menuVisibleHeight = 2 * 8 + 2 * 48;
+const _menuVisibleHeight = 2 * 8 + menuItems.length * 48;
 const menuVisibility = ref("hidden");
 const menuOpacity = ref(0);
 const menuWidth = ref(`${_menuVisibleWidth / 2}px`);
