@@ -1,8 +1,8 @@
 ---
-title: "Title"
-description: "description"
-date: 2022-01-04
-tags: []
+title: "dummy title"
+description: "dummy description"
+date: 2021-01-01
+tags: [dummy]
 ---
 
-text
+dummy text
