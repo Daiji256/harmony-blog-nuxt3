@@ -1,5 +1,5 @@
 <template>
-  <Posts v-bind:id="id" />
+  <Posts v-bind:id="id" v-bind:tag="[]" />
 </template>
 
 <script setup lang="ts">

@@ -84,11 +84,12 @@
 </style>
 
 <script setup lang="ts">
-type Props = { id: number };
-const { id } = defineProps<Props>();
+type Props = { id: number, tag: string | string[] };
+const { id, tag } = defineProps<Props>();
 
 const allPosts = await queryContent("posts")
   .where({ "_draft": false })
+  .where({ "tags": { $contains: tag } })
   .sort({ "date": -1 })
   .only(["_path", "title", "description", "date", "tags", "image"])
   .find();
