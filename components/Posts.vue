@@ -11,7 +11,7 @@
         <span v-if="idx === id" class="post-list-chip selected">
           <div class="post-list-chip-content">{{ idx }}</div>
         </span>
-        <NuxtLink v-if="idx !== id" class="post-list-chip unselected" v-bind:to="`/post-list/${idx}`">
+        <NuxtLink v-if="idx !== id" class="post-list-chip unselected" v-bind:to="`/posts/page-${idx}`">
           <div class="post-list-chip-content">{{ idx }}</div>
         </NuxtLink>
       </span>
