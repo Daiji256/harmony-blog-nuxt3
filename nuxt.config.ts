@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   modules: ["@nuxt/content"],
   content: {
     markdown: {
-      rehypePlugins: ["rehype-quotes", "rehype-adjust-aki"],
+      remarkPlugins: ["remark-math"],
+      rehypePlugins: ["rehype-latex2mathml", "rehype-quotes", "rehype-adjust-aki"],
     },
     highlight: {
       theme: 'github-light',

@@ -13,9 +13,11 @@
     "@nuxt/content": "^2.3.0",
     "modern-css-reset": "^1.4.0",
     "rehype-adjust-aki": "file:modules/rehype-adjust-aki",
+    "rehype-latex2mathml": "file:modules/rehype-latex2mathml",
     "rehype-parse": "^8.0.4",
     "rehype-quotes": "file:modules/rehype-quotes",
     "rehype-stringify": "^9.0.3",
+    "remark-math": "^5.1.1",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
     "unified": "^10.1.2"
