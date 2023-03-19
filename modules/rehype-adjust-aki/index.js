@@ -113,11 +113,11 @@ export default function rehypeAdjustAki() {
     });
   };
 
+  const ignoreParentTags = ["code", "code-inline", "mi", "mn", "mo", "ms"];
   const isProcessingNode = (node, parent) => {
     return !(
       node.type !== "text" ||
-      parent?.tagName === "code" ||
-      parent?.tagName === "code-inline"
+      ignoreParentTags.indexOf(parent?.tagName) !== -1
     );
   };
 

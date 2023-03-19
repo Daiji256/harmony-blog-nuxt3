@@ -16,12 +16,12 @@ export default function rehypeQuotes() {
     replaceText(tree, /"/g, "”");
   };
 
+  const ignoreParentTags = ["code", "code-inline", "mi", "mn", "mo", "ms"];
   const replaceText = (tree, regexp, replacement) => {
     flatMap(tree, (node, _, parent) => {
       if (
         node.type !== "text" ||
-        parent?.tagName === "code" ||
-        parent?.tagName === "code-inline"
+        ignoreParentTags.indexOf(parent?.tagName) !== -1
       )
         return [node];
       return [
