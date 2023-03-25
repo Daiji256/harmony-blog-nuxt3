@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      siteName: "Kumi Blog",
+      siteName: "Harmony Blog",
       limitPerPage: 10,
     },
   },
