@@ -1,29 +1,35 @@
-.aa--l-pm,
-.aa--r-pm,
+.aa--l-pm {
+    margin-left: -0.5em;
+}
+
+.aa--r-pm {
+    margin-right: -0.5em;
+}
+
 .aa--m-pm {
     font-feature-settings: "palt";
 }
 
 .aa--jw-aki::after {
-    font-size: calc(25% / 0.224);
+    font-size: calc(25% / 0.29);
     vertical-align: top;
     content: " ";
 }
 
 .aa--lr-pm-aki::after {
-    font-size: calc(50% / 0.224);
+    font-size: calc(50% / 0.29);
     vertical-align: top;
     content: " ";
 }
 
 .aa--m-pm-aki::after {
-    font-size: calc(25% / 0.224);
+    font-size: calc(25% / 0.29);
     vertical-align: top;
     content: " ";
 }
 
 .aa--d-pm-aki::after {
-    font-size: calc(100% / 0.224);
+    font-size: calc(100% / 0.29);
     vertical-align: top;
     content: " ";
 }

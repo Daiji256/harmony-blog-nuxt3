@@ -193,6 +193,10 @@
       content: " ";
     }
   }
+
+  math {
+    font-family: $font-family-math;
+  }
 }
 </style>
 

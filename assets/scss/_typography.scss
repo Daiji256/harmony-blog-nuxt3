@@ -1,6 +1,39 @@
+@font-face {
+  font-family: "Glow Sans J";
+  src: url(~/fonts/GlowSansJ/GlowSansJ-Normal-Book-SS.woff2) format('woff2'),
+    url(~/fonts/GlowSansJ/GlowSansJ-Normal-Book-SS.woff) format('woff'),
+    url(~/fonts/GlowSansJ/GlowSansJ-Normal-Book-SS.otf) format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Glow Sans J";
+  src: url(~/fonts/GlowSansJ/GlowSansJ-Normal-Medium-SS.woff2) format('woff2'),
+    url(~/fonts/GlowSansJ/GlowSansJ-Normal-Medium-SS.woff) format('woff'),
+    url(~/fonts/GlowSansJ/GlowSansJ-Normal-Medium-SS.otf) format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Firge";
+  src: url(~/fonts/Firge/Firge-Regular-SS.woff2) format('woff2'),
+    url(~/fonts/Firge/Firge-Regular-SS.woff) format('woff'),
+    url(~/fonts/Firge/Firge-Regular-SS.ttf) format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Fira Math";
+  src: url(~/fonts/FiraMath/FiraMath-Regular.woff2) format('woff2'),
+    url(~/fonts/FiraMath/FiraMath-Regular.woff) format('woff'),
+    url(~/fonts/FiraMath/FiraMath-Regular.otf) format('opentype');
+  font-weight: 400;
+}
+
 /* Font Family */
-$font-family-sans-serif: "Noto Sans JP", -apple-system, sans-serif;
-$font-family-monospace: "Noto Sans Mono", "Noto Sans JP", monospace;
+$font-family-sans-serif: "Glow Sans J", -apple-system, sans-serif;
+$font-family-monospace: "Firge", monospace;
+$font-family-math: "Fira Math", $font-family-sans-serif;
 
 .font-body-large {
   font-size: 1.6rem;
