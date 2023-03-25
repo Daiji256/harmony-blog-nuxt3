@@ -166,8 +166,8 @@ const siteName = useRuntimeConfig().siteName;
 
 const menuItems: { text: string, to: string }[] = [
   { text: "ホーム", to: "/" },
-  { text: "すべての投稿", to: "/posts/page-1" },
-  { text: "すべてのタグ", to: "/tags" },
+  { text: "すべての投稿", to: "/posts/page-1/" },
+  { text: "すべてのタグ", to: "/tags/" },
 ];
 const _menuVisibleWidth = 240;
 const _menuVisibleHeight = 2 * 8 + menuItems.length * 48;

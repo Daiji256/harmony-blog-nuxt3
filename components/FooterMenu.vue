@@ -5,12 +5,12 @@
     </div>
     <div class="links">
       <div class="link">
-        <NuxtLink to="/privacy-policy">
+        <NuxtLink to="/privacy-policy/">
           <AdjustText text="プライバシーポリシー" />
         </NuxtLink>
       </div>
       <div class="link">
-        <a target="_blank" rel="noopener" href="https://example.com">
+        <a target="_blank" rel="noopener" href="https://example.com/">
           <AdjustText text="お問い合わせ" />
         </a>
       </div>
@@ -39,7 +39,7 @@ footer {
 
     .link {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
 
       a {
         text-decoration: none;
