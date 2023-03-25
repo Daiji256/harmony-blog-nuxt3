@@ -173,6 +173,25 @@
   img,
   pre {
     margin-bottom: 16px;
+
+    &+.math {
+      margin-top: -16px;
+    }
+  }
+
+  .math-display {
+    padding: 8px 0;
+    text-align: center;
+  }
+
+  .math-inline {
+    &::before {
+      content: " ";
+    }
+
+    &::after {
+      content: " ";
+    }
   }
 }
 </style>
