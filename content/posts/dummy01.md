@@ -5,6 +5,14 @@ date: 2022-02-01
 tags: ["Nuxt.js", "組版", "アキ"]
 ---
 
+インラインスタイルの$(f \ast g)(t)=\int_{-\infty}^{\infty} f(\tau) g(t - \tau) \, \mathrm{d}\tau$数式
+
+ディスプレイスタイルの
+$$
+(f \ast g)(t)=\int_{-\infty}^{\infty} f(\tau) g(t - \tau) \, \mathrm{d}\tau
+$$
+数式
+
 # 1 見出し
 ## 2 見出し
 ### 3 見出し
@@ -22,6 +30,9 @@ tags: ["Nuxt.js", "組版", "アキ"]
 'あ'
 
 a'a'a'a"a"a"a
+
+１２３４５６７８９０  
+「１２３。」４５６７８
 
 ああ "あ"。"あ" あ"あ
 
@@ -46,12 +57,13 @@ a'a'a'a"a"a"a
 
 int main(void) {
     printf("Hello, Word!\n");
+    printf("こんにちは　世界！\n");
     return 0;
 }
 ```
 
-`あ "あ" あ`
+`あ "あ" あ「・。」`
 
 ```
-あ "あ" あ
+あ "あ" あ「・。」
 ```
