@@ -4,7 +4,7 @@
     url(/fonts/GlowSansJ/GlowSansJ-Normal-Book-SS.woff) format('woff'),
     url(/fonts/GlowSansJ/GlowSansJ-Normal-Book-SS.otf) format('opentype');
   font-weight: 400;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
@@ -13,7 +13,7 @@
     url(/fonts/GlowSansJ/GlowSansJ-Normal-Medium-SS.woff) format('woff'),
     url(/fonts/GlowSansJ/GlowSansJ-Normal-Medium-SS.otf) format('opentype');
   font-weight: 500;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
@@ -22,7 +22,7 @@
     url(/fonts/Firge/Firge-Regular-SS.woff) format('woff'),
     url(/fonts/Firge/Firge-Regular-SS.ttf) format('truetype');
   font-weight: 400;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
@@ -31,7 +31,7 @@
     url(/fonts/FiraMath/FiraMath-Regular.woff) format('woff'),
     url(/fonts/FiraMath/FiraMath-Regular.otf) format('opentype');
   font-weight: 400;
-  font-display: swap;
+  font-display: fallback;
 }
 
 /* Font Family */
