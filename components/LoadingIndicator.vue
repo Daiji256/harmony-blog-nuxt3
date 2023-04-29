@@ -1,23 +1,31 @@
 <template>
-  <div class="loading-indicator"></div>
+  <div class="indicator active"></div>
+  <div class="indicator track"></div>
 </template>
 
 <style lang="scss" scoped>
 @import "assets/scss/variable";
 
-.loading-indicator {
+.indicator {
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  top: $top-bar-height;
   pointer-events: none;
-  width: v-bind(progressWidth);
-  height: 3px;
+  height: 4px;
   opacity: v-bind(opacity);
-  background: red;
-  background-size: auto;
   transition: width 0.1s, opacity 0.5s;
   z-index: 100;
+}
+
+.active {
+  left: 0;
+  width: v-bind(progressWidth);
+  background: $color-primary;
+}
+
+.track {
+  left: v-bind(progressWidth);
+  width: calc(100vw - v-bind(progressWidth));
+  background: $color-surface-container-highest;
 }
 </style>
 
