@@ -8,7 +8,7 @@
     </div>
     <div v-if="postListSize > 1" class="page-chips">
       <span v-for="idx in postListSize">
-        <span v-if="idx === id" class="page-chip selected">
+        <span v-if="idx === id" class="page-chip selected" v-on:click="onSelectedClick">
           <div class="page-chip-content">{{ idx }}</div>
         </span>
         <NuxtLink v-if="idx !== id" class="page-chip unselected" v-bind:to="`../page-${idx}/`">
@@ -53,6 +53,8 @@
   }
 
   .selected {
+    cursor: pointer;
+
     .page-chip-content {
       color: $color-on-secondary-container;
       background-color: $color-secondary-container;
@@ -116,4 +118,8 @@ const start = limit * (id - 1);
 const end = limit * id;
 const posts = allPosts.slice(start, end);
 const postListSize = Math.ceil(allPosts.length / limit);
+
+const onSelectedClick = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+};
 </script>
