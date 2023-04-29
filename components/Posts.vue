@@ -57,6 +57,22 @@
       color: $color-on-secondary-container;
       background-color: $color-secondary-container;
     }
+
+    @media (hover: hover) {
+      &:hover {
+        .page-chip-content {
+          background-color: state($color-secondary-container, $color-on-secondary-container, $state-hover);
+          box-shadow: $my-box-shadow-level-2;
+        }
+      }
+    }
+
+    &:active {
+      .page-chip-content {
+        background-color: state($color-secondary-container, $color-on-secondary-container, $state-pressed);
+        box-shadow: $my-box-shadow-level-1;
+      }
+    }
   }
 
   .unselected {
@@ -68,7 +84,7 @@
     @media (hover: hover) {
       &:hover {
         .page-chip-content {
-          background-color: rgba($color-on-surface-variant, $state-hover);
+          background-color: state($color-surface, $color-on-surface, $state-hover);
           box-shadow: $my-box-shadow-level-2;
         }
       }
@@ -76,7 +92,7 @@
 
     &:active {
       .page-chip-content {
-        background-color: rgba($color-on-surface-variant, $state-pressed);
+        background-color: state($color-surface, $color-on-surface, $state-pressed);
         box-shadow: $my-box-shadow-level-1;
       }
     }
