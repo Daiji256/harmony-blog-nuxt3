@@ -28,7 +28,7 @@ footer {
   margin: 0 auto;
   padding: 8px 16px;
   width: min(100%, $screen-wrapper-max);
-  min-height: 72px;
+  min-height: $footer-height;
 
   .copyright {
     margin-right: 32px;
