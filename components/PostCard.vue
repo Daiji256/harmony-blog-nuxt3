@@ -24,7 +24,7 @@
 
 .post-card {
   text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: $color-transparent;
 
   .post-card-content {
     width: 100%;

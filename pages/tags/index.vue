@@ -19,7 +19,7 @@
     display: inline-block;
     margin: 0 8px 16px 0;
     text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: $color-transparent;
 
     @media (hover: hover) {
       &:hover {
