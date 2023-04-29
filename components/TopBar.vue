@@ -49,7 +49,7 @@ header {
     .title {
       color: inherit;
       text-decoration: none;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-tap-highlight-color: transparent;
 
       .title-content {
         @extend .font-title-medium;
@@ -139,7 +139,7 @@ header {
       padding: 0 12px;
       height: 48px;
       text-decoration: none;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-tap-highlight-color: transparent;
 
       @media (hover: hover) {
         &:hover {

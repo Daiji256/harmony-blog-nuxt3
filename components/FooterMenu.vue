@@ -44,7 +44,7 @@ footer {
       a {
         text-decoration: none;
         color: inherit;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
 
         @media (hover: hover) {
           &:hover {
