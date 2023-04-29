@@ -31,7 +31,7 @@
     border-radius: 12px;
     padding: 12px 16px;
     background-color: $color-surface;
-    box-shadow: $my-box-shadow-level-2;
+    box-shadow: $my-box-shadow-level-1;
 
     .post-title {
       @extend .font-title-large;

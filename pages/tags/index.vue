@@ -33,6 +33,7 @@
     &:active {
       .tag-content {
         background-color: rgba($color-on-surface-variant, $state-pressed);
+        box-shadow: $my-box-shadow-level-1;
       }
     }
 
