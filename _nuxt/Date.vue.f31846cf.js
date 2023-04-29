@@ -1,1 +1,0 @@
-import{h as o,o as s,D as c,O as r,u as _,S as l}from"./entry.cad6e2cd.js";const d=o({__name:"Date",props:{date:null},setup(e){const{date:t}=e,n=new Date(t).toLocaleDateString("ja-JP");return(u,m)=>{const a=l;return s(),c("div",null,[r(a,{text:_(n)},null,8,["text"])])}}});export{d as _};
