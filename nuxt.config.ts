@@ -1,18 +1,7 @@
-const getBaseUrl = () => {
-  const environment = process.env.APP_MODE;
-
-  switch (environment) {
-    case "production":
-      return "/harmony-blog-nuxt3/";
-    default:
-      return "/";
-  }
-};
-
 export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
-    baseURL: getBaseUrl(),
+    baseURL: process.env.NODE_ENV === "production" ? "/harmony-blog-nuxt3/" : "/",
   },
   css: ["modern-css-reset"],
   modules: ["@nuxt/content"],
