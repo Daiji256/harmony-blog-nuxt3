@@ -41,7 +41,7 @@ header {
   .header-wrapper {
     display: flex;
     align-items: center;
-    height: 64px;
+    height: $top-bar-height;
     margin: 0 auto;
     padding: 0 4px;
     width: min(100%, $screen-wrapper-max);
@@ -118,7 +118,7 @@ header {
   .menu {
     display: flex;
     position: fixed;
-    top: 56px;
+    top: calc($top-bar-height - 8px);
     right: calc((100% - min(100%, $screen-wrapper-max)) * 0.5 + 16px);
     flex-flow: column;
     padding: 8px 0;

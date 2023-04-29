@@ -12,7 +12,7 @@
 
 .main-wrapper {
   margin: 0 auto;
-  padding-top: 64px;
+  padding-top: $top-bar-height;
   width: min(100%, $screen-wrapper-max);
   min-height: calc(100vh - $footer-height);
 }
