@@ -24,7 +24,7 @@
 
 .track {
   left: v-bind(progressWidth);
-  width: calc(100vw - v-bind(progressWidth));
+  width: calc(100% - v-bind(progressWidth));
   background: $color-surface-container-highest;
 }
 </style>
