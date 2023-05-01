@@ -194,6 +194,24 @@
     }
   }
 
+  pre {
+    display: block;
+    width: 100%;
+    background-color: lightcyan; // TODO
+    border: 1px solid $color-outline;
+    border-radius: 12px;
+    padding: 8px 12px;
+    overflow-x: auto;
+  }
+
+  :not(pre) code {
+    display: inline-block;
+    background-color: lightcyan; // TODO
+    border-radius: 4px;
+    padding: 0 2px;
+    margin: 0 2px -0.111rem 2px;
+  }
+
   math {
     font-family: $font-family-math;
   }
