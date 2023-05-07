@@ -32,7 +32,7 @@
 @import "../assets/scss/variable";
 
 header {
-  z-index: 1;
+  z-index: 10;
   position: fixed;
   width: 100%;
   background-color: $color-surface;
@@ -104,7 +104,7 @@ header {
 }
 
 .menu-and-scrim {
-  z-index: 2;
+  z-index: 20;
   position: fixed;
   visibility: v-bind(menuVisibility);
   transition: visibility 0.2s;

@@ -1,77 +1,57 @@
 <template>
-  <div class="indicator active"></div>
-  <div class="indicator track"></div>
+  <div class="loading-indicator"></div>
 </template>
 
 <style lang="scss" scoped>
 @import "assets/scss/variable";
 
-.indicator {
+.loading-indicator {
   position: fixed;
+  z-index: 11;
   top: $top-bar-height;
-  pointer-events: none;
-  height: 4px;
-  opacity: v-bind(opacity);
-  transition: width 0.1s, opacity 0.5s;
-  z-index: 100;
-}
-
-.active {
   left: 0;
-  width: v-bind(progressWidth);
-  background: $color-primary;
+  pointer-events: none;
+  width: 100%;
+  height: calc(4px * v-bind(isShow));
+  color: $color-primary;
+  background-color: elevation($color-surface, $elevation-level-5);
+  background-image: linear-gradient(to right, transparent 50%, currentColor 50%, currentColor 60%, transparent 60%, transparent 71.5%, currentColor 71.5%, currentColor 84%, transparent 84%);
+  animation: linear infinite 2s indeterminate;
+  transition: height 0.25s;
 }
 
-.track {
-  left: v-bind(progressWidth);
-  width: calc(100% - v-bind(progressWidth));
-  background: $color-surface-container-highest;
+@keyframes indeterminate {
+  0% {
+    background-size: 200% 100%;
+    background-position: left -31.25% top 0%;
+  }
+
+  50% {
+    background-size: 800% 100%;
+    background-position: left -49% top 0%;
+  }
+
+  100% {
+    background-size: 400% 100%;
+    background-position: left -102% top 0%;
+  }
 }
 </style>
 
 <script setup lang="ts">
-const opacity = ref(0);
-let _progress = 0;
-const progressWidth = ref("0%");
-
-const _setProgress = (num: number) => {
-  let num2 = num;
-  if (num2 < 0) num2 = 0;
-  if (num2 > 100) num2 = 100;
-  _progress = num2;
-  progressWidth.value = `${num2}%`;
-};
-
-let _timer: NodeJS.Timeout | null = null;
-
-const _startTimer = () => {
-  _timer = setInterval(() => { _setProgress(_progress + 5); }, 50);
-};
-
-const _clear = () => {
-  if (_timer === null) return;
-  clearInterval(_timer);
-  _timer = null;
-};
+const isShow = ref(0);
 
 const _start = () => {
-  _clear();
-  _setProgress(0);
-  opacity.value = 1;
-  _startTimer();
+  isShow.value = 1;
 };
 
 const _finish = () => {
-  _clear();
-  _setProgress(100);
   setTimeout(() => {
-    opacity.value = 0;
-    setTimeout(() => { _setProgress(0); }, 500);
+    isShow.value = 0;
   }, 500);
 };
 
 const nuxtApp = useNuxtApp();
 nuxtApp.hook("page:start", _start);
 nuxtApp.hook("page:finish", _finish);
-onBeforeUnmount(() => _clear);
 </script>
