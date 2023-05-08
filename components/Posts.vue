@@ -113,7 +113,7 @@ const allPosts = await queryContent("posts")
   .only(["_path", "title", "description", "date", "tags", "image"])
   .find();
 const runtimeConfig = useRuntimeConfig();
-const limit = runtimeConfig.limitPerPage;
+const limit = runtimeConfig.public['limitPerPage'];
 const start = limit * (id - 1);
 const end = limit * id;
 const posts = allPosts.slice(start, end);

@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig();
-const siteName = runtimeConfig.siteName;
+const siteName = runtimeConfig.public['siteName'];
 const route = useRoute();
 const tag = route.params.tag as string;
 const title = `${tag} - ${siteName}`;

@@ -162,7 +162,8 @@ header {
 </style>
 
 <script setup lang="ts">
-const siteName = useRuntimeConfig().siteName;
+const runtimeConfig = useRuntimeConfig();
+const siteName = runtimeConfig.public['siteName'];
 
 const menuItems: { text: string, to: string }[] = [
   { text: "ホーム", to: "/" },

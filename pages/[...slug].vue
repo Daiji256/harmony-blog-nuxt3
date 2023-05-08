@@ -219,9 +219,11 @@
 </style>
 
 <script setup lang="ts">
+const runtimeConfig = useRuntimeConfig();
+const siteName = runtimeConfig.public['siteName'];
 const { path } = useRoute();
 const data = await queryContent(path).findOne();
 useHead({
-  title: `${data.title} - ${useRuntimeConfig().siteName}`,
+  title: `${data.title} - ${siteName}`,
 });
 </script>
