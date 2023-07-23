@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     baseURL: process.env.NODE_ENV === "production" ? "/harmony-blog-nuxt3/" : "/",
   },
   css: ["modern-css-reset"],
-  modules: ["@nuxt/content", "nuxt-simple-sitemap"],
+  modules: ["@nuxt/content", "nuxt-simple-robots", "nuxt-simple-sitemap"],
   site: {
     url: "https://daiji256.github.io/harmony-blog-nuxt3",
   },
