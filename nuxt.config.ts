@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   css: ["modern-css-reset"],
   modules: ["@nuxt/content", "nuxt-simple-sitemap"],
   site: {
-    url: 'https://example.com',
+    url: "https://daiji256.github.io/harmony-blog-nuxt3",
   },
   content: {
     markdown: {
