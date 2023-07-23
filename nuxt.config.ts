@@ -4,7 +4,10 @@ export default defineNuxtConfig({
     baseURL: process.env.NODE_ENV === "production" ? "/harmony-blog-nuxt3/" : "/",
   },
   css: ["modern-css-reset"],
-  modules: ["@nuxt/content"],
+  modules: ["@nuxt/content", "nuxt-simple-sitemap"],
+  site: {
+    url: 'https://example.com',
+  },
   content: {
     markdown: {
       remarkPlugins: ["remark-math"],
