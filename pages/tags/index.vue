@@ -1,6 +1,6 @@
 <template>
   <div class="tags">
-    <NuxtLink class="tag" v-for="tag in tags" v-bind:to="`/tags/${tag.name}/page-1/`">
+    <NuxtLink class="tag" v-for="tag in tags" v-bind:to="`/tags/${tag.name}/page-1`">
       <div class="tag-content">
         <AdjustText class="tag-name" v-bind:text="tag.name" />
         <AdjustText class="tag-count" v-bind:text="`${tag.count}`" />

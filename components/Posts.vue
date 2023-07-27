@@ -2,7 +2,7 @@
   <div>
     <div class="posts">
       <div v-for="post in posts">
-        <PostCard class="post-card" v-bind:path="`${post._path}/`" v-bind:title="post.title"
+        <PostCard class="post-card" v-bind:path="`${post._path}`" v-bind:title="post.title"
           v-bind:description="post.description" v-bind:date="post.date" v-bind:tags="post.tags" />
       </div>
     </div>
@@ -11,7 +11,7 @@
         <span v-if="idx === id" class="page-chip selected" v-on:click="onSelectedClick">
           <div class="page-chip-content">{{ idx }}</div>
         </span>
-        <NuxtLink v-if="idx !== id" class="page-chip unselected" v-bind:to="`../page-${idx}/`">
+        <NuxtLink v-if="idx !== id" class="page-chip unselected" v-bind:to="`./page-${idx}`">
           <div class="page-chip-content">{{ idx }}</div>
         </NuxtLink>
       </span>

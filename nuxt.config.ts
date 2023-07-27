@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
-    baseURL: process.env.NODE_ENV === "production" ? "/harmony-blog-nuxt3/" : "/",
+    baseURL: process.env.NODE_ENV === "production" ? "/harmony-blog-nuxt3" : "/",
   },
   css: ["modern-css-reset"],
   modules: ["@nuxt/content", "nuxt-simple-robots", "nuxt-simple-sitemap"],

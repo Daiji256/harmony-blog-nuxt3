@@ -6,7 +6,7 @@
       </h1>
       <div class="post-sup-info">
         <div class="post-tag" v-for="tag in data.tags">
-          <NuxtLink v-bind:to="`/tags/${tag}/page-1/`">
+          <NuxtLink v-bind:to="`/tags/${tag}/page-1`">
             <AdjustText v-bind:text="`${tag}`" />
           </NuxtLink>
         </div>
