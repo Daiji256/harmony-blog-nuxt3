@@ -4,9 +4,21 @@ export default defineNuxtConfig({
     baseURL: process.env.NODE_ENV === "production" ? "/harmony-blog-nuxt3" : "/",
   },
   css: ["modern-css-reset"],
-  modules: ["@nuxt/content", "nuxt-simple-robots", "nuxt-simple-sitemap"],
+  modules: ["@nuxt/content", "nuxt-og-image", "nuxt-simple-robots", "nuxt-simple-sitemap"],
   site: {
     url: "https://daiji256.github.io/harmony-blog-nuxt3",
+  },
+  ogImage: {
+    defaults: {
+      component: "OgImage",
+    },
+    fonts: [
+      {
+        name: "Glow Sans J",
+        path: "fonts/GlowSansJ/GlowSansJ-Normal-Medium-SS-TG.ttf",
+        weight: 500,
+      },
+    ],
   },
   content: {
     markdown: {
