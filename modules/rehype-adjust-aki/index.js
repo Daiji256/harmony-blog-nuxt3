@@ -4,8 +4,8 @@ export default function rehypeAdjustAki() {
   const adjustAki = (tree) => {
     const jpn = "ぁ-んァ-ヶ一-龠ー";
     const wrn = "0-9A-Za-zÀ-žÀ-žͰ-ϿЀ-ӿ";
-    const lPm = "（〔［｛〈《「『【｟〘〖〝";
-    const rPm = "）〕］｝〉》」』】｠〙〗〟。．、，";
+    const lPm = "（｟「『［〚｛【〖〈《〔〘〝";
+    const rPm = "）｠」』］〛｝】〗〉》〕〙〟。．、，";
     const mPm = "・：；";
     const dPm = "！？‼⁇⁈⁉";
     const emSp = "　";
