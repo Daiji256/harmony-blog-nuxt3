@@ -8,8 +8,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variables";
-
 .tag-title {
   @extend .font-title-large;
   margin: 16px 16px 0 16px;

@@ -29,8 +29,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variables";
-
 header {
   z-index: 10;
   position: fixed;

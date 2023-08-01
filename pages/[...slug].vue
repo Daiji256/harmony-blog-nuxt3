@@ -18,8 +18,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variables";
-
 .post {
   @extend .font-body-large;
   padding: 0 16px;
@@ -81,8 +79,6 @@
 </style>
 
 <style lang="scss">
-@import "../assets/scss/variables";
-
 .doc-body {
   h1 {
     @extend .font-headline-large;

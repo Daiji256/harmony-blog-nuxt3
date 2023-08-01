@@ -8,8 +8,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "assets/scss/variables";
-
 .main-wrapper {
   margin: 0 auto;
   padding-top: $top-bar-height;
@@ -19,8 +17,6 @@
 </style>
 
 <style lang="scss">
-@import "../assets/scss/variables";
-
 html {
   font-size: 62.5%;
 }

@@ -3,8 +3,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "assets/scss/variables";
-
 .loading-indicator {
   position: fixed;
   z-index: 11;

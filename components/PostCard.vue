@@ -20,8 +20,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variables";
-
 .post-card {
   text-decoration: none;
   -webkit-tap-highlight-color: $color-transparent;

@@ -5,6 +5,15 @@ export default defineNuxtConfig({
   },
   css: ["modern-css-reset"],
   modules: ["@nuxt/content", "nuxt-og-image", "nuxt-simple-robots", "nuxt-simple-sitemap"],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/scss/_variables.scss";',
+        },
+      },
+    },
+  },
   site: {
     url: "https://daiji256.github.io/harmony-blog-nuxt3",
   },
