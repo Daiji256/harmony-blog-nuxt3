@@ -8,7 +8,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variable";
+@import "../assets/scss/variables";
 
 .tag-title {
   @extend .font-title-large;

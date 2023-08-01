@@ -20,7 +20,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variable";
+@import "../assets/scss/variables";
 
 .posts {
   margin: 16px 16px 0 16px;

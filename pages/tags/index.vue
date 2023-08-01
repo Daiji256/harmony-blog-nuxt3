@@ -10,7 +10,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variable";
+@import "../assets/scss/variables";
 
 .tags {
   margin: 16px 8px 0px 16px;

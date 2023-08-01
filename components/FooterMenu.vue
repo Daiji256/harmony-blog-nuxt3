@@ -19,7 +19,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variable";
+@import "../assets/scss/variables";
 
 footer {
   @extend .font-label-large;

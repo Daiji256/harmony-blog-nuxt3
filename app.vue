@@ -8,7 +8,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "assets/scss/variable";
+@import "assets/scss/variables";
 
 .main-wrapper {
   margin: 0 auto;
@@ -19,7 +19,7 @@
 </style>
 
 <style lang="scss">
-@import "../assets/scss/variable";
+@import "../assets/scss/variables";
 
 html {
   font-size: 62.5%;
