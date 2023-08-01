@@ -66,7 +66,7 @@
 
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig();
-const siteName = runtimeConfig.siteName;
+const siteName = runtimeConfig.public['siteName'];
 const title = `タグ一覧 - ${siteName}`;
 useHead({
   title: title,
