@@ -224,7 +224,7 @@ useHead({
 });
 
 defineOgImage({
-  component: 'Post',
+  component: 'Normal',
   title: data.title,
   description: data.description,
   tags: data.tags,

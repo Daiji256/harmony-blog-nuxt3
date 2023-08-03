@@ -27,7 +27,7 @@ useHead({
 });
 
 defineOgImage({
-  component: 'Post',
+  component: 'Normal',
   title: tag,
 });
 </script>

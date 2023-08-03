@@ -87,7 +87,7 @@ const tags = Object.entries(tagsCount)
   .sort((a, b) => { return b.count - a.count });
 
 defineOgImage({
-  component: 'Post',
+  component: 'Normal',
   title: "タグ一覧",
 });
 </script>

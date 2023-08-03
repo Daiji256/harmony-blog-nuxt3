@@ -13,7 +13,7 @@ useHead({
 });
 
 defineOgImage({
-  component: 'Post',
+  component: 'Normal',
   title: "すべての投稿",
 });
 </script>
