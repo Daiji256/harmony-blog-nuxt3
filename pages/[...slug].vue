@@ -222,4 +222,11 @@ const data = await queryContent(path).findOne();
 useHead({
   title: `${data.title} - ${siteName}`,
 });
+
+defineOgImage({
+  component: 'Post',
+  title: data.title,
+  description: data.description,
+  tags: data.tags,
+});
 </script>
