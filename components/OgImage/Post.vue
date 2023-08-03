@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-type Props = { title: String, description: string, tags: string[] };
+type Props = { title: String, description: string | undefined, tags: string[] | undefined };
 const { title, description, tags } = defineProps<Props>();
 
 // WARNING: The SCSS definition is not taking effect, so this file needs to be set separately.
@@ -84,7 +84,7 @@ const adjustText = (text: String) => {
 };
 
 const adjustedTitle = adjustText(title);
-const adjustedDescription = adjustText(description);
+const adjustedDescription = adjustText(description ?? "");
 const adjustedTags = Array
   .from(new Set(tags)) // Converting to a set to avoid duplicates caused by a bug.
   .map(tag => adjustText(tag))

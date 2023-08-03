@@ -25,4 +25,9 @@ const id = Number(route.params.id) || 1;
 useHead({
   title: title,
 });
+
+defineOgImage({
+  component: 'Post',
+  title: tag,
+});
 </script>

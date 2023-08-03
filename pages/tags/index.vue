@@ -85,4 +85,9 @@ const tagsCount: number[] = [posts].flat().map(post => post.tags).flat().reduce(
 const tags = Object.entries(tagsCount)
   .map(([name, count]) => ({ name, count }))
   .sort((a, b) => { return b.count - a.count });
+
+defineOgImage({
+  component: 'Post',
+  title: "タグ一覧",
+});
 </script>
