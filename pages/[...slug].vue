@@ -204,8 +204,8 @@
     display: inline-block;
     background-color: $color-surface-container-low;
     border-radius: 4px;
-    padding: 0 2px;
-    margin: 0 2px -0.111rem 2px;
+    padding: 0 4px;
+    margin-bottom: -0.15rem;
   }
 
   math {
