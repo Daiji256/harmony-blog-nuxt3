@@ -122,7 +122,7 @@
   p a {
     padding: 4px 0;
     line-height: 3.2rem;
-    color: $color-link;
+    color: $color-primary;
     text-decoration: none;
 
     @media (hover: hover) {
