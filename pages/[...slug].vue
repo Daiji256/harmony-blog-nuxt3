@@ -35,7 +35,7 @@
       display: inline-block;
 
       a {
-        color: $color-link;
+        color: $color-on-surface-variant;
         text-decoration: none;
 
         @media (hover: hover) {
