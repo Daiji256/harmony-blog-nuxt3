@@ -152,11 +152,6 @@
     font-weight: 500;
   }
 
-  em {
-    color: $color-primary;
-    font-style: inherit;
-  }
-
   h1,
   h2,
   h3,
