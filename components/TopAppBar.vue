@@ -185,7 +185,7 @@ header {
     transition: opacity 0.125s ease-in-out, visibility 0s 0.25s;
 
     .menu-item {
-      height: 12px;
+      height: 16px;
       transition: height 0.125s ease-in-out;
     }
   }
@@ -193,10 +193,10 @@ header {
 </style>
 
 <script setup lang="ts">
-const runtimeConfig = useRuntimeConfig();
-const siteName = runtimeConfig.public['siteName'];
-
+const _runtimeConfig = useRuntimeConfig();
+const siteName = _runtimeConfig.public['siteName'];
 const isShowMenu = ref(false);
+const isAtTop = ref(true);
 
 const _showMenu = () => {
   isShowMenu.value = true;
@@ -206,20 +206,18 @@ const _hideMenu = () => {
   isShowMenu.value = false;
 };
 
+const _updateIsAtTop = () => {
+  if (process.client) {
+    isAtTop.value = window.scrollY <= 0;
+  }
+};
+
 const onMenuClick = () => {
   _showMenu();
 };
 
 const onScrimClick = () => {
   _hideMenu();
-};
-
-const isAtTop = ref(true);
-
-const _updateIsAtTop = () => {
-  if (process.client) {
-    isAtTop.value = window.scrollY <= 0;
-  }
 };
 
 const _nuxtApp = useNuxtApp();
