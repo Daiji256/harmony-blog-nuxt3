@@ -37,12 +37,12 @@ body {
 
 .page-enter-active,
 .layout-enter-active {
-  transition: 0.2s ease-in;
+  transition: 0.25s ease-in;
 }
 
 .page-leave-active,
 .layout-leave-active {
-  transition: 0.2s ease-out;
+  transition: 0.25s ease-out;
 }
 
 .page-enter-from,
