@@ -1,5 +1,5 @@
 <template>
-  <TopBar />
+  <TopAppBar />
   <div class="main-wrapper">
     <LoadingIndicator />
     <NuxtPage />
