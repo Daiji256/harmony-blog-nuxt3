@@ -1,5 +1,5 @@
 <template>
-  <div class="loading-indicator"></div>
+  <div class="loading-indicator" v-bind:class="{ 'loading-indicator-visible': isShow }"></div>
 </template>
 
 <style lang="scss" scoped>
@@ -10,12 +10,15 @@
   left: 0;
   pointer-events: none;
   width: 100%;
-  height: calc(4px * v-bind(isShow));
   color: $color-primary;
   background-color: $color-surface-container-highest;
   background-image: linear-gradient(to right, transparent 50%, currentColor 50%, currentColor 60%, transparent 60%, transparent 71.5%, currentColor 71.5%, currentColor 84%, transparent 84%);
   animation: linear infinite 2s indeterminate;
   transition: height 0.25s ease-in-out;
+}
+
+.loading-indicator-visible {
+  height: 4px;
 }
 
 @keyframes indeterminate {
@@ -37,19 +40,12 @@
 </style>
 
 <script setup lang="ts">
-const isShow = ref(0);
-
-const _start = () => {
-  isShow.value = 1;
-};
-
-const _finish = () => {
-  setTimeout(() => {
-    isShow.value = 0;
-  }, 500);
-};
-
-const nuxtApp = useNuxtApp();
-nuxtApp.hook("page:start", _start);
-nuxtApp.hook("page:finish", _finish);
+const isShow = ref(false);
+const _nuxtApp = useNuxtApp();
+_nuxtApp.hook("page:start", () => {
+  isShow.value = true;
+});
+_nuxtApp.hook("page:finish", () => {
+  setTimeout(() => { isShow.value = false; }, 250);
+});
 </script>
