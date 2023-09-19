@@ -17,11 +17,21 @@
     </div>
   </header>
   <div class="menu-and-scrim">
-    <div class="scrim" v-on:click="onScrimClick"></div>
-    <div class="menu">
-      <NuxtLink class="menu-item" v-for="menuItem in menuItems" v-bind:to="menuItem.to">
+    <div v-bind:class="{ 'scrim': isShowMenu }" v-on:click="onScrimClick"></div>
+    <div class="menu" v-bind:class="{ 'menu-visible': isShowMenu, 'menu-hidden': !isShowMenu }">
+      <NuxtLink class="menu-item" to="/">
         <div class="text">
-          <AdjustText v-bind:text="menuItem.text" />
+          <AdjustText text="ホーム" />
+        </div>
+      </NuxtLink>
+      <NuxtLink class="menu-item" to="/posts/page-1">
+        <div class="text">
+          <AdjustText text="すべての投稿" />
+        </div>
+      </NuxtLink>
+      <NuxtLink class="menu-item" to="/tags">
+        <div class="text">
+          <AdjustText text="すべてのタグ" />
         </div>
       </NuxtLink>
     </div>
@@ -112,8 +122,6 @@ header {
 .menu-and-scrim {
   z-index: 20;
   position: fixed;
-  visibility: v-bind(menuVisibility);
-  transition: visibility 0.2s;
 
   .scrim {
     position: fixed;
@@ -133,17 +141,12 @@ header {
     background-color: $color-surface;
     border-radius: 4px;
     box-shadow: $my-box-shadow-level-2;
-    opacity: v-bind(menuOpacity);
-    width: v-bind(menuWidth);
-    height: v-bind(menuHeight);
-    transition-timing-function: ease-in-out;
-    transition: height 0.2s, width 0.2s, opacity 0.2s;
+    width: 240px;
 
     .menu-item {
       color: inherit;
       display: inline-flex;
       padding: 0 12px;
-      height: 48px;
       text-decoration: none;
       -webkit-tap-highlight-color: $color-transparent;
 
@@ -164,6 +167,28 @@ header {
       }
     }
   }
+
+  .menu-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.125s ease-in-out;
+
+    .menu-item {
+      height: 48px;
+      transition: height 0.25s ease-in-out;
+    }
+  }
+
+  .menu-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.125s ease-in-out, visibility 0s 0.25s;
+
+    .menu-item {
+      height: 12px;
+      transition: height 0.125s ease-in-out;
+    }
+  }
 }
 </style>
 
@@ -171,32 +196,14 @@ header {
 const runtimeConfig = useRuntimeConfig();
 const siteName = runtimeConfig.public['siteName'];
 
-const menuItems: { text: string, to: string }[] = [
-  { text: "ホーム", to: "/" },
-  { text: "すべての投稿", to: "/posts/page-1" },
-  { text: "すべてのタグ", to: "/tags" },
-];
-const _menuVisibleWidth = 240;
-const _menuVisibleHeight = 2 * 8 + menuItems.length * 48;
-const menuVisibility = ref("hidden");
-const menuOpacity = ref(0);
-const menuWidth = ref(`${_menuVisibleWidth / 2}px`);
-const menuHeight = ref(`${_menuVisibleHeight / 2}px`);
+const isShowMenu = ref(false);
 
 const _showMenu = () => {
-  menuVisibility.value = "visible";
-  menuOpacity.value = 1;
-  menuWidth.value = `${_menuVisibleWidth}px`;
-  menuHeight.value = `${_menuVisibleHeight}px`;
+  isShowMenu.value = true;
 };
 
 const _hideMenu = () => {
-  menuVisibility.value = "hidden";
-  menuOpacity.value = 0;
-  setTimeout(() => {
-    menuWidth.value = `${_menuVisibleWidth / 2}px`;
-    menuHeight.value = `${_menuVisibleHeight / 2}px`;
-  }, 200);
+  isShowMenu.value = false;
 };
 
 const onMenuClick = () => {
