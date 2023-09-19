@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header v-bind:class="{ 'header-is-at-top': isAtTop, 'header-is-not-at-top': !isAtTop }">
     <div class="header-wrapper">
       <NuxtLink class="title" to="/">
         <div class="title-content">
@@ -33,8 +33,6 @@ header {
   z-index: 10;
   position: fixed;
   width: 100%;
-  background-color: $color-surface;
-  box-shadow: $my-box-shadow-level-2;
 
   .header-wrapper {
     display: flex;
@@ -99,6 +97,18 @@ header {
       }
     }
   }
+}
+
+.header-is-at-top {
+  background-color: $color-surface;
+  transition-timing-function: ease-in-out;
+  transition: background-color 0.25s;
+}
+
+.header-is-not-at-top {
+  background-color: elevation($color-surface-container, $elevation-level-2);
+  transition-timing-function: ease-in-out;
+  transition: background-color 0.25s;
 }
 
 .menu-and-scrim {
@@ -199,8 +209,30 @@ const onScrimClick = () => {
   _hideMenu();
 };
 
-const nuxtApp = useNuxtApp();
-nuxtApp.hook("page:start", _hideMenu);
-nuxtApp.hook("page:finish", _hideMenu);
-onBeforeUnmount(() => _hideMenu);
+const isAtTop = ref(true);
+
+const _updateIsAtTop = () => {
+  if (process.client) {
+    isAtTop.value = window.scrollY <= 0;
+  }
+};
+
+const _nuxtApp = useNuxtApp();
+_nuxtApp.hook("page:start", () => {
+  _hideMenu();
+  _updateIsAtTop();
+});
+_nuxtApp.hook("page:finish", () => {
+  _hideMenu();
+  _updateIsAtTop();
+});
+onBeforeUnmount(() => {
+  _hideMenu();
+});
+onMounted(() => {
+  window.addEventListener("scroll", _updateIsAtTop);
+});
+onUnmounted(() => {
+  window.removeEventListener("scroll", _updateIsAtTop);
+});
 </script>
