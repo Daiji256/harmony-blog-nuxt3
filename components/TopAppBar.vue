@@ -101,14 +101,12 @@ header {
 
 .header-is-at-top {
   background-color: $color-surface;
-  transition-timing-function: ease-in-out;
-  transition: background-color 0.25s;
+  transition: background-color 0.25s ease-in-out;
 }
 
 .header-is-not-at-top {
   background-color: elevation($color-surface-container, $elevation-level-2);
-  transition-timing-function: ease-in-out;
-  transition: background-color 0.25s;
+  transition: background-color 0.25s ease-in-out;
 }
 
 .menu-and-scrim {
