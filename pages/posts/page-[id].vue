@@ -3,15 +3,13 @@
 </template>
 
 <script setup lang="ts">
-const runtimeConfig = useRuntimeConfig();
-const siteName = runtimeConfig.public['siteName'];
-const route = useRoute();
-const title = `すべての投稿 - ${siteName}`;
-const id = Number(route.params.id) || 1;
+const _runtimeConfig = useRuntimeConfig();
+const _siteName = _runtimeConfig.public['siteName'];
+const _route = useRoute();
+const id = Number(_route.params.id) || 1;
 useHead({
-  title: title,
+  title: `すべての投稿 – ${_siteName}`,
 });
-
 defineOgImage({
   component: 'Normal',
   title: "すべての投稿",

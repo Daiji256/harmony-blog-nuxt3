@@ -16,16 +16,14 @@
 </style>
 
 <script setup lang="ts">
-const runtimeConfig = useRuntimeConfig();
-const siteName = runtimeConfig.public['siteName'];
-const route = useRoute();
-const tag = route.params.tag as string;
-const title = `${tag} - ${siteName}`;
-const id = Number(route.params.id) || 1;
+const _runtimeConfig = useRuntimeConfig();
+const _siteName = _runtimeConfig.public['siteName'];
+const _route = useRoute();
+const tag = _route.params.tag as string;
+const id = Number(_route.params.id) || 1;
 useHead({
-  title: title,
+  title: `${tag} – ${_siteName}`,
 });
-
 defineOgImage({
   component: 'Normal',
   title: tag,

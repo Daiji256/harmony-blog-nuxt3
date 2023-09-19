@@ -210,14 +210,13 @@
 </style>
 
 <script setup lang="ts">
-const runtimeConfig = useRuntimeConfig();
-const siteName = runtimeConfig.public['siteName'];
-const { path } = useRoute();
-const data = await queryContent(path).findOne();
+const _runtimeConfig = useRuntimeConfig();
+const _siteName = _runtimeConfig.public['siteName'];
+const { path: _path } = useRoute();
+const data = await queryContent(_path).findOne();
 useHead({
-  title: `${data.title} - ${siteName}`,
+  title: `${data.title} – ${_siteName}`,
 });
-
 defineOgImage({
   component: 'Normal',
   title: data.title,

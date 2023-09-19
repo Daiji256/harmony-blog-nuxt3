@@ -65,27 +65,24 @@
 </style>
 
 <script setup lang="ts">
-const runtimeConfig = useRuntimeConfig();
-const siteName = runtimeConfig.public['siteName'];
-const title = `タグ一覧 - ${siteName}`;
+const _runtimeConfig = useRuntimeConfig();
+const _siteName = _runtimeConfig.public['siteName'];
 useHead({
-  title: title,
+  title: `タグ一覧 – ${_siteName}`,
 });
-
-const posts = await queryContent('posts')
+const _posts = await queryContent('posts')
   .where({ '_draft': false })
   .only(['tags'])
   .find();
-const tagsCount: number[] = [posts].flat().map(post => post.tags).flat().reduce(
+const _tagsCount: number[] = [_posts].flat().map(post => post.tags).flat().reduce(
   (prev, current) => {
     prev[current] = (prev[current] || 0) + 1;
     return prev;
   }, {},
 );
-const tags = Object.entries(tagsCount)
+const tags = Object.entries(_tagsCount)
   .map(([name, count]) => ({ name, count }))
   .sort((a, b) => { return b.count - a.count });
-
 defineOgImage({
   component: 'Normal',
   title: "タグ一覧",
