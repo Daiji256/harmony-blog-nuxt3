@@ -214,8 +214,16 @@ const _runtimeConfig = useRuntimeConfig();
 const _siteName = _runtimeConfig.public['siteName'];
 const { path: _path } = useRoute();
 const data = await queryContent(_path).findOne();
-useHead({
-  title: `${data.title} – ${_siteName}`,
+const _isTop = _path === '/';
+useSeoMeta({
+  title: _isTop ? _siteName : `${data.title} – ${_siteName}`,
+  ogTitle: _isTop ? _siteName : data.title,
+  twitterTitle: _isTop ? _siteName : data.title,
+  description: data.description,
+  ogDescription: data.description,
+  twitterDescription: data.description,
+  ogSiteName: _siteName,
+  ogType: _isTop ? 'website' : 'article',
 });
 defineOgImage({
   component: 'Normal',
