@@ -18,6 +18,7 @@
     "rehype-parse": "^8.0.4",
     "rehype-quotes": "file:modules/rehype-quotes",
     "rehype-stringify": "^9.0.3",
+    "remark-math": "^5.1.1",
     "sass": "^1.64.1",
     "sass-loader": "^13.3.2",
     "unified": "^10.1.2"
