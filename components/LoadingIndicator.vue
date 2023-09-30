@@ -9,6 +9,7 @@
   top: $top-bar-height;
   left: 0;
   pointer-events: none;
+  height: 0;
   width: 100%;
   color: $color-primary;
   background-color: $color-surface-container-highest;
