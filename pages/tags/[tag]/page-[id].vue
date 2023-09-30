@@ -18,11 +18,19 @@
 <script setup lang="ts">
 const _runtimeConfig = useRuntimeConfig();
 const _siteName = _runtimeConfig.public['siteName'];
+const _tagPageDescription = _runtimeConfig.public['tagPageDescription'];
 const _route = useRoute();
 const tag = _route.params.tag as string;
 const id = Number(_route.params.id) || 1;
-useHead({
+useSeoMeta({
   title: `${tag} – ${_siteName}`,
+  ogTitle: tag,
+  twitterTitle: tag,
+  description: `${tag}${_tagPageDescription}`,
+  ogDescription: `${tag}${_tagPageDescription}`,
+  twitterDescription: `${tag}${_tagPageDescription}`,
+  ogSiteName: _siteName,
+  ogType: "article",
 });
 defineOgImage({
   component: 'Normal',
