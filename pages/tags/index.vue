@@ -67,9 +67,19 @@
 <script setup lang="ts">
 const _runtimeConfig = useRuntimeConfig();
 const _siteName = _runtimeConfig.public['siteName'];
-useHead({
-  title: `タグ一覧 – ${_siteName}`,
+const _tagsTitle = _runtimeConfig.public['tagsTitle'];
+const _tagsDescription = _runtimeConfig.public['tagsDescription'];
+useSeoMeta({
+  title: `${_tagsTitle} – ${_siteName}`,
+  ogTitle: _tagsTitle,
+  twitterTitle: _tagsTitle,
+  description: _tagsDescription,
+  ogDescription: _tagsDescription,
+  twitterDescription: _tagsDescription,
+  ogSiteName: _siteName,
+  ogType: "article",
 });
+
 const _posts = await queryContent('posts')
   .where({ '_draft': false })
   .only(['tags'])
@@ -85,6 +95,6 @@ const tags = Object.entries(_tagsCount)
   .sort((a, b) => { return b.count - a.count });
 defineOgImage({
   component: 'Normal',
-  title: "タグ一覧",
+  title: _tagsTitle,
 });
 </script>

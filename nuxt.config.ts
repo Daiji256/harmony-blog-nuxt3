@@ -42,6 +42,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteName: "Harmony Blog",
+      tagsTitle: "すべてのタグ",
+      tagsDescription: "全ての投稿のタグ一覧です。",
       limitPerPage: 10,
     },
   },
