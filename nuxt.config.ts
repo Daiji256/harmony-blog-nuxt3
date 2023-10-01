@@ -4,7 +4,13 @@ export default defineNuxtConfig({
     baseURL: process.env.NODE_ENV === "production" ? "/harmony-blog-nuxt3" : "/",
   },
   css: ["modern-css-reset"],
-  modules: ["@nuxt/content", "nuxt-og-image", "nuxt-simple-robots", "nuxt-simple-sitemap"],
+  modules: [
+    "@nuxt/content",
+    "@nuxtjs/i18n",
+    "nuxt-og-image",
+    "nuxt-simple-robots",
+    "nuxt-simple-sitemap",
+  ],
   vite: {
     css: {
       preprocessorOptions: {
@@ -50,4 +56,14 @@ export default defineNuxtConfig({
       limitPerPage: 10,
     },
   },
-})
+  i18n: {
+    /**
+     * Warning: You are using an i18n library,
+     * but the source code lacks adequate implementation for multilingual support.
+     * Code modifications are necessary to achieve full language compatibility.
+     */
+    locales: ["ja"],
+    defaultLocale: "ja",
+    vueI18n: "i18n/i18n.config.ts",
+  },
+});
