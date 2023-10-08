@@ -16,9 +16,10 @@
 </style>
 
 <script setup lang="ts">
-const _runtimeConfig = useRuntimeConfig();
-const _siteName = _runtimeConfig.public['siteName'];
-const _tagPageDescription = _runtimeConfig.public['tagPageDescription'];
+const _appConfig = useAppConfig();
+const _strings = _appConfig['strings'];
+const _siteName = _strings.siteName;
+const _tagPageDescription = _strings.tagPageDescription;
 const _route = useRoute();
 const tag = _route.params.tag as string;
 const id = Number(_route.params.id) || 1;
