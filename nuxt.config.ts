@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     baseURL: process.env.NODE_ENV === "production" ? "/harmony-blog-nuxt3" : "/",
   },
   css: ["modern-css-reset"],
-  modules: ["@nuxt/content", "nuxt-og-image", "nuxt-simple-robots", "nuxt-simple-sitemap"],
+  modules: ["@nuxt/content", "@nuxtseo/module"],
   vite: {
     css: {
       preprocessorOptions: {
