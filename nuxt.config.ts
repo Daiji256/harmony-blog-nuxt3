@@ -1,7 +1,6 @@
 export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
-    baseURL: "/",
   },
   css: ["modern-css-reset"],
   modules: ["@nuxt/content", "@nuxtseo/module"],
