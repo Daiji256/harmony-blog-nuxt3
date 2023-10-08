@@ -3,7 +3,7 @@
     <div class="header-wrapper">
       <NuxtLink class="title" to="/">
         <div class="title-content">
-          <AdjustText v-bind:text="$t('siteName')" />
+          <AdjustText v-bind:text="siteName" />
         </div>
       </NuxtLink>
       <div class="trailing-menu" v-on:click="onMenuClick">
@@ -193,6 +193,8 @@ header {
 </style>
 
 <script setup lang="ts">
+const _runtimeConfig = useRuntimeConfig();
+const siteName = _runtimeConfig.public['siteName'];
 const isShowMenu = ref(false);
 const isAtTop = ref(true);
 
