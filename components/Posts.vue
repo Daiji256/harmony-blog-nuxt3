@@ -104,18 +104,16 @@
 type Props = { id: number, tag: string | string[] };
 const { id, tag } = defineProps<Props>();
 
-const allPosts = await queryContent("posts")
+const _allPosts = await queryContent("posts")
   .where({ "_draft": false })
   .where({ "tags": { $contains: tag } })
   .sort({ "date": -1 })
   .only(["_path", "title", "description", "date", "tags", "image"])
   .find();
-const runtimeConfig = useRuntimeConfig();
-const limit = runtimeConfig.public['limitPerPage'];
-const start = limit * (id - 1);
-const end = limit * id;
-const posts = allPosts.slice(start, end);
-const postListSize = Math.ceil(allPosts.length / limit);
+const _appConfig = useAppConfig();
+const _limit = _appConfig['limitPerPage'];
+const posts = _allPosts.slice(_limit * (id - 1), _limit * id);
+const postListSize = Math.ceil(_allPosts.length / _limit);
 
 const onSelectedClick = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
