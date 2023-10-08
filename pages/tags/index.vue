@@ -65,10 +65,11 @@
 </style>
 
 <script setup lang="ts">
-const _runtimeConfig = useRuntimeConfig();
-const _siteName = _runtimeConfig.public['siteName'];
-const _tagsTitle = _runtimeConfig.public['tagsTitle'];
-const _tagsDescription = _runtimeConfig.public['tagsDescription'];
+const _appConfig = useAppConfig();
+const _strings = _appConfig['strings'];
+const _siteName = _strings.siteName;
+const _tagsTitle = _strings.tagsTitle;
+const _tagsDescription = _strings.tagsDescription;
 useSeoMeta({
   title: `${_tagsTitle} – ${_siteName}`,
   ogTitle: _tagsTitle,
