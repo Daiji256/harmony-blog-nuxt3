@@ -89,5 +89,5 @@ const adjustedTags = Array
   .from(new Set(tags)) // Converting to a set to avoid duplicates caused by a bug.
   .map(tag => adjustText(tag))
   .join(' / ');
-const adjustedSiteName = adjustText(useRuntimeConfig().public['siteName']);
+const adjustedSiteName = adjustText(useAppConfig()['strings'].siteName);
 </script>
