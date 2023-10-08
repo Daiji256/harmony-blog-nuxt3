@@ -3,10 +3,11 @@
 </template>
 
 <script setup lang="ts">
-const _runtimeConfig = useRuntimeConfig();
-const _siteName = _runtimeConfig.public['siteName'];
-const _postsTitle = _runtimeConfig.public['postsTitle'];
-const _postsDescription = _runtimeConfig.public['postsDescription'];
+const _appConfig = useAppConfig();
+const _strings = _appConfig['strings'];
+const _siteName = _strings.siteName;
+const _postsTitle = _strings.postsTitle;
+const _postsDescription = _strings.postsDescription;
 const _route = useRoute();
 const id = Number(_route.params.id) || 1;
 useSeoMeta({
