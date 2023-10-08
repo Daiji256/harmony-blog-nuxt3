@@ -193,8 +193,8 @@ header {
 </style>
 
 <script setup lang="ts">
-const _runtimeConfig = useRuntimeConfig();
-const siteName = _runtimeConfig.public['siteName'];
+const _appConfig = useAppConfig();
+const siteName = _appConfig['strings'].siteName;
 const isShowMenu = ref(false);
 const isAtTop = ref(true);
 
