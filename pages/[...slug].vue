@@ -210,8 +210,8 @@
 </style>
 
 <script setup lang="ts">
-const _runtimeConfig = useRuntimeConfig();
-const _siteName = _runtimeConfig.public['siteName'];
+const _appConfig = useAppConfig();
+const _siteName = _appConfig['strings'].siteName;
 const { path: _path } = useRoute();
 const data = await queryContent(_path).findOne();
 const _isTop = _path === '/';
