@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
-    baseURL: process.env.NODE_ENV === "production" ? "/harmony-blog-nuxt3" : "/",
+    baseURL: "/",
   },
   css: ["modern-css-reset"],
   modules: ["@nuxt/content", "@nuxtseo/module"],
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     },
   },
   site: {
-    url: "https://daiji256.github.io/harmony-blog-nuxt3",
+    url: "https://harmony-blog-nuxt3.pages.dev",
   },
   ogImage: {
     defaults: {
@@ -39,4 +39,4 @@ export default defineNuxtConfig({
       preload: ["c", "js"],
     },
   },
-})
+});
