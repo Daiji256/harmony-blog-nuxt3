@@ -22,7 +22,7 @@
     @media (hover: hover) {
       &:hover {
         .tag-content {
-          background-color: state($color-on-surface, $state-hover);
+          background-color: state($color-surface, $color-on-surface, $state-hover);
           box-shadow: $my-box-shadow-level-2;
         }
       }
@@ -30,7 +30,7 @@
 
     &:active {
       .tag-content {
-        background-color: state($color-on-surface, $state-pressed);
+        background-color: state($color-surface, $color-on-surface, $state-pressed);
         box-shadow: $my-box-shadow-level-1;
       }
     }

@@ -61,7 +61,7 @@
     @media (hover: hover) {
       &:hover {
         .page-chip-content {
-          background-color: state($color-on-secondary-container, $state-hover);
+          background-color: state($color-secondary-container, $color-on-secondary-container, $state-hover);
           box-shadow: $my-box-shadow-level-2;
         }
       }
@@ -69,7 +69,7 @@
 
     &:active {
       .page-chip-content {
-        background-color: state($color-on-secondary-container, $state-pressed);
+        background-color: state($color-secondary-container, $color-on-secondary-container, $state-pressed);
         box-shadow: $my-box-shadow-level-1;
       }
     }
@@ -84,7 +84,7 @@
     @media (hover: hover) {
       &:hover {
         .page-chip-content {
-          background-color: state($color-on-surface, $state-hover);
+          background-color: state($color-surface, $color-on-surface, $state-hover);
           box-shadow: $my-box-shadow-level-2;
         }
       }
@@ -92,7 +92,7 @@
 
     &:active {
       .page-chip-content {
-        background-color: state($color-on-surface, $state-pressed);
+        background-color: state($color-surface, $color-on-surface, $state-pressed);
         box-shadow: $my-box-shadow-level-1;
       }
     }
