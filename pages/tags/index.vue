@@ -36,7 +36,7 @@
     }
 
     .tag-content {
-      @extend .font-body-large;
+      font: $font-body-large;
       display: flex;
       align-items: center;
       border-radius: 8px;

@@ -19,17 +19,17 @@
 
 <style lang="scss" scoped>
 .post {
-  @extend .font-body-large;
+  font: $font-body-large;
   padding: 0 16px;
 
   .post-title {
-    @extend .font-headline-large;
+    font: $font-headline-large;
     margin: -56px 0 0 0;
     padding: 64px 0 0 0;
   }
 
   .post-sup-info {
-    @extend .font-label-large;
+    font: $font-label-large;
 
     .post-tag {
       display: inline-block;
@@ -81,18 +81,18 @@
 <style lang="scss">
 .doc-body {
   h1 {
-    @extend .font-headline-large;
+    font: $font-headline-large;
   }
 
   h2 {
-    @extend .font-headline-medium;
+    font: $font-headline-medium;
   }
 
   h3,
   h4,
   h5,
   h6 {
-    @extend .font-headline-small;
+    font: $font-headline-small;
   }
 
   h2,

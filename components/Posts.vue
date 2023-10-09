@@ -39,7 +39,7 @@
     -webkit-tap-highlight-color: $color-transparent;
 
     .page-chip-content {
-      @extend .font-body-large;
+      font: $font-body-large;
       display: flex;
       justify-content: center;
       align-items: center;

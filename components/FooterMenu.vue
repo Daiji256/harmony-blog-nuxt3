@@ -20,7 +20,7 @@
 
 <style lang="scss" scoped>
 footer {
-  @extend .font-label-large;
+  font: $font-label-large;
   display: flex;
   bottom: 0;
   margin: 0 auto;

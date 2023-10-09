@@ -32,18 +32,18 @@
     box-shadow: $my-box-shadow-level-1;
 
     .post-title {
-      @extend .font-title-large;
+      font: $font-title-large;
       color: $color-on-surface;
     }
 
     .post-description {
-      @extend .font-body-medium;
+      font: $font-body-medium;
       color: $color-on-surface;
       margin-top: 8px;
     }
 
     .post-sup-info {
-      @extend .font-label-medium;
+      font: $font-label-medium;
       color: $color-on-surface-variant;
       margin-top: 8px;
 

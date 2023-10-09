@@ -58,7 +58,7 @@ header {
       -webkit-tap-highlight-color: $color-transparent;
 
       .title-content {
-        @extend .font-title-medium;
+        font: $font-title-medium;
         display: inline-flex;
         height: 48px;
         padding: 0 12px;
@@ -161,7 +161,7 @@ header {
       }
 
       .text {
-        @extend .font-label-large;
+        font: $font-label-large;
         display: grid;
         align-items: center;
       }

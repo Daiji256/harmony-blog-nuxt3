@@ -22,7 +22,6 @@ html {
 }
 
 body {
-  font-family: $font-family-sans-serif;
   font-feature-settings: "chws" 1;
   -webkit-text-size-adjust: 100%;
   line-break: strict;

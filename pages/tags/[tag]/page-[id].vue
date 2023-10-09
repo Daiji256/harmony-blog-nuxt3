@@ -9,7 +9,7 @@
 
 <style lang="scss" scoped>
 .tag-title {
-  @extend .font-title-large;
+  font: $font-title-large;
   margin: 16px 16px 0 16px;
   color: $color-on-surface;
 }
