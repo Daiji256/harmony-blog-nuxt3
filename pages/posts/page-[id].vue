@@ -11,7 +11,7 @@ const _postsDescription = _strings.postsDescription;
 const _route = useRoute();
 const id = Number(_route.params.id) || 1;
 useSeoMeta({
-  title: `${_postsTitle} – ${_siteName}`,
+  title: _postsTitle,
   ogTitle: _postsTitle,
   twitterTitle: _postsTitle,
   description: _postsDescription,

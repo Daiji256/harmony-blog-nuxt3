@@ -71,7 +71,7 @@ const _siteName = _strings.siteName;
 const _tagsTitle = _strings.tagsTitle;
 const _tagsDescription = _strings.tagsDescription;
 useSeoMeta({
-  title: `${_tagsTitle} – ${_siteName}`,
+  title: _tagsTitle,
   ogTitle: _tagsTitle,
   twitterTitle: _tagsTitle,
   description: _tagsDescription,

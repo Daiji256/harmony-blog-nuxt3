@@ -216,7 +216,7 @@ const { path: _path } = useRoute();
 const data = await queryContent(_path).findOne();
 const _isTop = _path === '/';
 useSeoMeta({
-  title: _isTop ? _siteName : `${data.title} – ${_siteName}`,
+  title: _isTop ? "" : data.title,
   ogTitle: _isTop ? _siteName : data.title,
   twitterTitle: _isTop ? _siteName : data.title,
   description: data.description,

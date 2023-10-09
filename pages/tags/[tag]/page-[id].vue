@@ -24,7 +24,7 @@ const _route = useRoute();
 const tag = _route.params.tag as string;
 const id = Number(_route.params.id) || 1;
 useSeoMeta({
-  title: `${tag} – ${_siteName}`,
+  title: tag,
   ogTitle: tag,
   twitterTitle: tag,
   description: `${tag}${_tagPageDescription}`,

@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   },
   site: {
     url: "https://harmony-blog-nuxt3.pages.dev",
+    name: "Harmony Blog"
   },
   ogImage: {
     defaults: {
