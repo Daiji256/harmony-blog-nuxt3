@@ -68,12 +68,12 @@ header {
 
       @media (hover: hover) {
         &:hover .title-content {
-          background-color: state($color-surface, $color-on-surface, $state-hover);
+          background-color: state($color-on-surface, $state-hover);
         }
       }
 
       &:active .title-content {
-        background-color: state($color-surface, $color-on-surface, $state-pressed);
+        background-color: state($color-on-surface, $state-pressed);
       }
     }
 
@@ -98,12 +98,12 @@ header {
 
       @media (hover: hover) {
         &:hover .trailing-menu-content {
-          background-color: state($color-surface, $color-on-surface, $state-hover);
+          background-color: state($color-on-surface, $state-hover);
         }
       }
 
       &:active .trailing-menu-content {
-        background-color: state($color-surface, $color-on-surface, $state-pressed);
+        background-color: state($color-on-surface, $state-pressed);
       }
     }
   }
@@ -152,12 +152,12 @@ header {
 
       @media (hover: hover) {
         &:hover {
-          background-color: state($color-surface, $color-on-surface, $state-hover);
+          background-color: state($color-on-surface, $state-hover);
         }
       }
 
       &:active {
-        background-color: state($color-surface, $color-on-surface, $state-pressed);
+        background-color: state($color-on-surface, $state-pressed);
       }
 
       .text {

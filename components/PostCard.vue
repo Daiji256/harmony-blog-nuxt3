@@ -74,13 +74,13 @@
   @media (hover: hover) {
     &:hover .post-card-content {
       box-shadow: $my-box-shadow-level-2;
-      background-color: state($color-surface, $color-on-surface, $state-hover);
+      background-color: state($color-on-surface, $state-hover);
     }
   }
 
   &:active .post-card-content {
     box-shadow: $my-box-shadow-level-1;
-    background-color: state($color-surface, $color-on-surface, $state-pressed);
+    background-color: state($color-on-surface, $state-pressed);
   }
 }
 </style>

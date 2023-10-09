@@ -333,12 +333,12 @@ $elevation-level-5: 14%;
   @return mix($color-primary, $surface, $alpha);
 }
 
-$state-none: 0%;
-$state-hover: 8%;
-$state-focus: 12%;
-$state-pressed: 12%;
-$state-dragged: 16%;
+$state-none: 1.00;
+$state-hover: 0.92;
+$state-focus: 0.90;
+$state-pressed: 0.90;
+$state-dragged: 0.84;
 
-@function state($state-layer, $container, $alpha) {
-  @return mix($container, $state-layer, $alpha);
+@function state($container, $state) {
+  @return transparentize($container, $state);
 }
