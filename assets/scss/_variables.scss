@@ -1,9 +1,10 @@
 @import "colors", "typography";
 
+/* Bar Height */
 $top-bar-height: 64px;
 $footer-height: 80px;
 
-// screen size
+/* Screen Size */
 $screen-x-small-min: 320px;
 $screen-small-min: 576px;
 $screen-medium-min: 768px;
@@ -12,5 +13,6 @@ $screen-x-large-min: 1200px;
 $screen-xx-large-min: 1400px;
 $screen-wrapper-max: $screen-medium-min;
 
+/* Shadow */
 $my-box-shadow-level-1: 0 0.5px 2px 0 rgba($color-shadow, 20%);
 $my-box-shadow-level-2: 0 1px 4px 0 rgba($color-shadow, 20%);
