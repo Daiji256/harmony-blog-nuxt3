@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
-  css: ["modern-css-reset"],
+  css: ["the-new-css-reset"],
   modules: ["@nuxt/content", "@nuxtseo/module"],
   vite: {
     css: {

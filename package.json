@@ -9,7 +9,6 @@
   "devDependencies": {
     "@nuxt/content": "^2.8.5",
     "@nuxtseo/module": "^2.0.0-beta.15",
-    "modern-css-reset": "^1.4.0",
     "nuxt": "^3.7.4",
     "rehype-adjust-aki": "file:modules/rehype-adjust-aki",
     "rehype-latex2mathml": "file:modules/rehype-latex2mathml",
@@ -19,6 +18,7 @@
     "remark-math": "^5.1.1",
     "sass": "^1.68.0",
     "sass-loader": "^13.3.2",
+    "the-new-css-reset": "^1.11.0",
     "unified": "^11.0.3"
   }
 }
