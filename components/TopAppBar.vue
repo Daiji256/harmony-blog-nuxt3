@@ -65,16 +65,6 @@ header {
         border-radius: 24px;
         align-items: center;
       }
-
-      @media (hover: hover) {
-        &:hover .title-content {
-          background-color: state($color-surface, $color-on-surface, $state-hover);
-        }
-      }
-
-      &:active .title-content {
-        background-color: state($color-surface, $color-on-surface, $state-pressed);
-      }
     }
 
     .trailing-menu {
@@ -95,28 +85,64 @@ header {
           transform: translate(-50%, -50%);
         }
       }
-
-      @media (hover: hover) {
-        &:hover .trailing-menu-content {
-          background-color: state($color-surface, $color-on-surface, $state-hover);
-        }
-      }
-
-      &:active .trailing-menu-content {
-        background-color: state($color-surface, $color-on-surface, $state-pressed);
-      }
     }
   }
 }
 
 .header-is-at-top {
   background-color: $color-surface;
-  transition: background-color 0.25s ease-in-out;
+
+  .title {
+    @media (hover: hover) {
+      &:hover .title-content {
+        background-color: state($color-surface, $color-on-surface, $state-hover);
+      }
+    }
+
+    &:active .title-content {
+      background-color: state($color-surface, $color-on-surface, $state-pressed);
+    }
+  }
+
+  .trailing-menu {
+    @media (hover: hover) {
+      &:hover .trailing-menu-content {
+        background-color: state($color-surface, $color-on-surface, $state-hover);
+      }
+    }
+
+    &:active .trailing-menu-content {
+      background-color: state($color-surface, $color-on-surface, $state-pressed);
+    }
+  }
 }
 
 .header-is-not-at-top {
   background-color: elevation($color-surface-container, $elevation-level-2);
-  transition: background-color 0.25s ease-in-out;
+
+  .title {
+    @media (hover: hover) {
+      &:hover .title-content {
+        background-color: state(elevation($color-surface-container, $elevation-level-2), $color-on-surface, $state-hover);
+      }
+    }
+
+    &:active .title-content {
+      background-color: state(elevation($color-surface-container, $elevation-level-2), $color-on-surface, $state-pressed);
+    }
+  }
+
+  .trailing-menu {
+    @media (hover: hover) {
+      &:hover .trailing-menu-content {
+        background-color: state(elevation($color-surface-container, $elevation-level-2), $color-on-surface, $state-hover);
+      }
+    }
+
+    &:active .trailing-menu-content {
+      background-color: state(elevation($color-surface-container, $elevation-level-2), $color-on-surface, $state-pressed);
+    }
+  }
 }
 
 .menu-and-scrim {
