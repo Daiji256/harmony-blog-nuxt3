@@ -33,6 +33,7 @@ export default defineNuxtConfig({
     markdown: {
       remarkPlugins: ["remark-math"],
       rehypePlugins: ["rehype-latex2mathml", "rehype-quotes", "rehype-adjust-aki"],
+      anchorLinks: false,
     },
     highlight: {
       theme: 'github-light',

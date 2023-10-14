@@ -95,16 +95,6 @@
     font: $font-headline-small;
   }
 
-  h2,
-  h3,
-  h4 {
-    a {
-      color: inherit;
-      text-decoration: none;
-      pointer-events: none;
-    }
-  }
-
   h1,
   h2,
   h3,
