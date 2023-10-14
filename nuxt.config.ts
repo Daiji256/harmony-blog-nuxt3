@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
   modules: ["@nuxt/content", "@nuxtseo/module"],
-  css: ["modern-css-reset", "@/assets/scss/main.scss"],
+  css: ["@/assets/scss/main.scss"],
   vite: {
     css: {
       preprocessorOptions: {
