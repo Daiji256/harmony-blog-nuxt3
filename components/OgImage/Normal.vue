@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-type Props = { title: String, description: string | undefined, tags: string[] | undefined };
+type Props = { title: string, description: string | undefined, tags: string[] | undefined };
 const { title, description, tags } = defineProps<Props>();
 
 // WARNING: The SCSS definition is not taking effect, so this file needs to be set separately.
@@ -64,7 +64,7 @@ const style = {
   },
 };
 
-const adjustText = (text: String) => {
+const adjustText = (text: string) => {
   const rPm = "）｠」』］〛｝】〗〉》〕〙〟。．、，";
   const mPm = "・：；";
   const dPm = "！？‼⁇⁈⁉";
