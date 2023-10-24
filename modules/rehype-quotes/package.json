@@ -2,8 +2,5 @@
     "name": "rehype-quotes",
     "version": "0.0.1",
     "type": "module",
-    "exports": "./index.js",
-    "dependencies": {
-        "unist-util-flatmap": "^1.0.0"
-    }
+    "exports": "./index.js"
 }
