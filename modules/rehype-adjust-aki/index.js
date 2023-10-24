@@ -1,5 +1,3 @@
-import flatMap from "unist-util-flatmap";
-
 export default function rehypeAdjustAki() {
   const adjustAki = (tree) => {
     const jpn = "ぁ-んァ-ヶ一-龠ー";
@@ -35,31 +33,24 @@ export default function rehypeAdjustAki() {
   };
 
   const insertAkiFirst = (tree, regexp, className) => {
-    flatMap(tree, (node, _, parent) => {
-      if (!isProcessingNode(node, parent)) return [node];
+    flatMapText(tree, (node) => {
       const text = node.value;
-      if (text.search(regexp) < 0) {
-        return [makeTextNode(text)];
-      }
+      if (text.search(regexp) < 0) return [makeTextNode(text)];
       return [makeSpanNode(className), makeTextNode(text)];
     });
   };
 
   const insertAkiLast = (tree, regexp, className) => {
-    flatMap(tree, (node, _, parent) => {
-      if (!isProcessingNode(node, parent)) return [node];
+    flatMapText(tree, (node) => {
       const text = node.value;
-      if (text.search(regexp) < 0) {
-        return [makeTextNode(text)];
-      }
+      if (text.search(regexp) < 0) return [makeTextNode(text)];
       return [makeTextNode(text), makeSpanNode(className)];
     });
   };
 
   const insertAkiBetween = (tree, regexp, className) => {
-    flatMap(tree, (node, _, parent) => {
-      if (!isProcessingNode(node, parent)) return [node];
-      let ret = [];
+    flatMapText(tree, (node) => {
+      const ret = [];
       let text = node.value;
       while (true) {
         const idx = text.search(regexp);
@@ -76,9 +67,8 @@ export default function rehypeAdjustAki() {
   };
 
   const eraseAki = (tree, regexp, className) => {
-    flatMap(tree, (node, _, parent) => {
-      if (!isProcessingNode(node, parent)) return [node];
-      let ret = [];
+    flatMapText(tree, (node) => {
+      const ret = [];
       let text = node.value;
       while (true) {
         const idx = text.search(regexp);
@@ -95,9 +85,8 @@ export default function rehypeAdjustAki() {
   };
 
   const replaceDpAki = (tree, regexp, className) => {
-    flatMap(tree, (node, _, parent) => {
-      if (!isProcessingNode(node, parent)) return [node];
-      let ret = [];
+    flatMapText(tree, (node) => {
+      const ret = [];
       let text = node.value;
       while (true) {
         const idx = text.search(regexp);
@@ -113,22 +102,14 @@ export default function rehypeAdjustAki() {
     });
   };
 
-  const ignoreParentTags = ["code", "code-inline", "mi", "mn", "mo", "ms"];
-  const isProcessingNode = (node, parent) => {
-    return !(
-      node.type !== "text" ||
-      ignoreParentTags.indexOf(parent?.tagName) !== -1
-    );
-  };
-
   const makeTextNode = (value) => {
     return { type: "text", value: value };
   };
 
   const makeSpanNode = (className, value) => {
-    let children = [];
+    const children = [];
     if (value !== undefined) {
-      children = [makeTextNode(value)];
+      children.push(makeTextNode(value));
     }
     return {
       type: "element",
@@ -136,6 +117,20 @@ export default function rehypeAdjustAki() {
       properties: { className: [className] },
       children: children,
     };
+  };
+
+  const flatMapText = (tree, block) => {
+    const ignoreTags = ["code", "code-inline", "pre", "mi", "mn", "mo", "ms"];
+    const _flatMapText = (node) => {
+      if (ignoreTags.includes(node.tagName)) return [node];
+      if (node.children) {
+        node.children = node.children.flatMap((child) => _flatMapText(child));
+      }
+      if (node.type !== "text") return [node];
+      return block(node);
+    };
+
+    return _flatMapText(tree)[0];
   };
 
   return adjustAki;
