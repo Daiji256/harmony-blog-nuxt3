@@ -10,6 +10,7 @@ export default defineAppConfig({
         tagsTitle: "すべてのタグ",
         tagsDescription: "全ての投稿のタグ一覧です。",
         tagPageDescription: "の投稿の投稿一覧です。",
+        goBackHome: "Go Back Home",
     },
     urls: {
         contact: "https://example.com",

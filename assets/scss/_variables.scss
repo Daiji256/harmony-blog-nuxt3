@@ -14,5 +14,6 @@ $screen-xx-large-min: 1400px;
 $screen-wrapper-max: $screen-medium-min;
 
 /* Shadow */
+$my-box-shadow-level-0: 0 0 0 0 $color-transparent;
 $my-box-shadow-level-1: 0 0.5px 2px 0 rgba($color-shadow, 20%);
 $my-box-shadow-level-2: 0 1px 4px 0 rgba($color-shadow, 20%);
