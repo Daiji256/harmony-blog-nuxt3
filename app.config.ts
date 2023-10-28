@@ -4,6 +4,7 @@ export default defineAppConfig({
         footerCopyright: "&copy; 2022 Daiji256",
         footerPrivacyPolicy: "プライバシーポリシー",
         footerContact: "お問い合わせ",
+        home: "ホーム",
         postsTitle: "すべての投稿",
         postsDescription: "投稿一覧です。",
         tagsTitle: "すべてのタグ",

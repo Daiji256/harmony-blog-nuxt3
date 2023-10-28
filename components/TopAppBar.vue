@@ -21,17 +21,17 @@
     <div class="menu" v-bind:class="{ 'menu-visible': isShowMenu, 'menu-hidden': !isShowMenu }">
       <NuxtLink class="menu-item" to="/">
         <div class="text">
-          <AdjustText text="ホーム" />
+          <AdjustText v-bind:text="home" />
         </div>
       </NuxtLink>
       <NuxtLink class="menu-item" to="/posts/page-1">
         <div class="text">
-          <AdjustText text="すべての投稿" />
+          <AdjustText v-bind:text="postsTitle" />
         </div>
       </NuxtLink>
       <NuxtLink class="menu-item" to="/tags">
         <div class="text">
-          <AdjustText text="すべてのタグ" />
+          <AdjustText v-bind:text="tagsTitle" />
         </div>
       </NuxtLink>
     </div>
@@ -220,7 +220,11 @@ header {
 
 <script setup lang="ts">
 const _appConfig = useAppConfig();
-const siteName = _appConfig['strings'].siteName;
+const _strings = _appConfig['strings'];
+const siteName = _strings.siteName;
+const home = _strings.home;
+const postsTitle = _strings.postsTitle;
+const tagsTitle = _strings.tagsTitle;
 const isShowMenu = ref(false);
 const isAtTop = ref(true);
 
