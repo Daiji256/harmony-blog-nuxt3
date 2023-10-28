@@ -115,11 +115,7 @@ const _limit = _appConfig['limitPerPage'];
 const posts = _allPosts.slice(_limit * (id - 1), _limit * id);
 const postListSize = Math.ceil(_allPosts.length / _limit);
 if (posts.length == 0) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Page Not Found',
-    fatal: true,
-  });
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true });
 }
 
 const onSelectedClick = () => {
