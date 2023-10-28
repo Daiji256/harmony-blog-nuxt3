@@ -1,18 +1,18 @@
 <template>
   <div class="post">
-    <ContentRenderer v-bind:value="data">
-      <h1 class="post-title" v-bind:id="data.title">
-        <AdjustText v-bind:text="data.title" />
+    <ContentRenderer v-bind:value="content">
+      <h1 class="post-title" v-bind:id="content.title">
+        <AdjustText v-bind:text="content.title" />
       </h1>
       <div class="post-sup-info">
-        <div class="post-tag" v-for="tag in data.tags">
+        <div class="post-tag" v-for="tag in content.tags">
           <NuxtLink v-bind:to="`/tags/${tag}/page-1`">
             <AdjustText v-bind:text="`${tag}`" />
           </NuxtLink>
         </div>
-        <Date v-bind:date="data.date" class="post-date" />
+        <Date v-bind:date="content.date" class="post-date" />
       </div>
-      <ContentRendererMarkdown class="doc-body" v-bind:value="data" />
+      <ContentRendererMarkdown class="doc-body" v-bind:value="content" />
     </ContentRenderer>
   </div>
 </template>
@@ -203,22 +203,26 @@
 const _appConfig = useAppConfig();
 const _siteName = _appConfig['strings'].siteName;
 const { path: _path } = useRoute();
-const data = await queryContent(_path).findOne();
+const { data } = await useAsyncData('home', () => queryContent(_path).findOne());
+if (!data.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true });
+}
+const content = data.value;
 const _isTop = _path === '/';
 useSeoMeta({
-  title: _isTop ? "" : data.title,
-  ogTitle: _isTop ? _siteName : data.title,
-  twitterTitle: _isTop ? _siteName : data.title,
-  description: data.description,
-  ogDescription: data.description,
-  twitterDescription: data.description,
+  title: _isTop ? "" : content.title,
+  ogTitle: _isTop ? _siteName : content.title,
+  twitterTitle: _isTop ? _siteName : content.title,
+  description: content.description,
+  ogDescription: content.description,
+  twitterDescription: content.description,
   ogSiteName: _siteName,
   ogType: _isTop ? 'website' : 'article',
 });
 defineOgImage({
   component: 'Normal',
-  title: data.title,
-  description: data.description,
-  tags: data.tags,
+  title: content.title,
+  description: content.description,
+  tags: content.tags,
 });
 </script>
