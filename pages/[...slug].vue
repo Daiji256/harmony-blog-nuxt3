@@ -203,11 +203,7 @@
 const _appConfig = useAppConfig();
 const _siteName = _appConfig['strings'].siteName;
 const { path: _path } = useRoute();
-const posts = await queryContent(_path).find();
-if (posts.length == 0) {
-  throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true });
-}
-const data = posts[0];
+const data = await queryContent(_path).findOne();
 const _isTop = _path === '/';
 useSeoMeta({
   title: _isTop ? "" : data.title,
