@@ -106,7 +106,7 @@ const { id, tag } = defineProps<Props>();
 
 const { data } = await useAsyncData(
   "posts",
-  () => queryContent("posts")
+  () => queryContent("posts-$tag")
     .where({ "_draft": false })
     .where({ "tags": { $contains: tag } })
     .sort({ "date": -1 })

@@ -82,7 +82,7 @@ useSeoMeta({
 });
 
 const { data } = await useAsyncData(
-  'posts',
+  'tags',
   () => queryContent('posts')
     .where({ '_draft': false })
     .only(['tags'])
