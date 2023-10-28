@@ -204,7 +204,7 @@ const _appConfig = useAppConfig();
 const _siteName = _appConfig['strings'].siteName;
 const { path: _path } = useRoute();
 const data = await queryContent(_path).findOne();
-if (data.title === undefined) {
+if (!data.title) {
   throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
 }
 const _isTop = _path === '/';
