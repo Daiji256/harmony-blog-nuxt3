@@ -1,17 +1,17 @@
 <template>
   <footer>
     <div class="copyright">
-      <AdjustText text="&copy; 2022 Daiji256" />
+      <AdjustText v-bind:text="copyright" />
     </div>
     <div class="links">
       <div class="link">
         <NuxtLink to="/privacy-policy">
-          <AdjustText text="プライバシーポリシー" />
+          <AdjustText v-bind:text="privacyPolicy" />
         </NuxtLink>
       </div>
       <div class="link">
-        <a target="_blank" rel="noopener" href="https://example.com">
-          <AdjustText text="お問い合わせ" />
+        <a target="_blank" rel="noopener" v-bind:href="contactUrl">
+          <AdjustText v-bind:text="contact" />
         </a>
       </div>
     </div>
@@ -54,3 +54,13 @@ footer {
   }
 }
 </style>
+
+<script setup lang="ts">
+const _appConfig = useAppConfig();
+const _strings = _appConfig['strings'];
+const _urls = _appConfig['urls'];
+const copyright = _strings.footerCopyright;
+const privacyPolicy = _strings.footerPrivacyPolicy;
+const contact = _strings.footerContact;
+const contactUrl = _urls.contact;
+</script>
