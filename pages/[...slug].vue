@@ -203,7 +203,7 @@
 const _appConfig = useAppConfig();
 const _siteName = _appConfig['strings'].siteName;
 const { path: _path } = useRoute();
-const { data } = await useAsyncData('home', () => queryContent(_path).findOne());
+const { data } = await useAsyncData(_path, () => queryContent(_path).findOne());
 if (!data.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true });
 }
