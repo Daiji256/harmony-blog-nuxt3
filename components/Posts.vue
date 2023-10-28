@@ -117,7 +117,8 @@ const postListSize = Math.ceil(_allPosts.length / _limit);
 if (posts.length == 0) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Posts Not Found',
+    statusMessage: 'Page Not Found',
+    fatal: true,
   });
 }
 
