@@ -104,12 +104,19 @@
 type Props = { id: number, tag: string | string[] };
 const { id, tag } = defineProps<Props>();
 
-const _allPosts = await queryContent("posts")
-  .where({ "_draft": false })
-  .where({ "tags": { $contains: tag } })
-  .sort({ "date": -1 })
-  .only(["_path", "title", "description", "date", "tags", "image"])
-  .find();
+const { data } = await useAsyncData(
+  "posts",
+  () => queryContent("posts")
+    .where({ "_draft": false })
+    .where({ "tags": { $contains: tag } })
+    .sort({ "date": -1 })
+    .only(["_path", "title", "description", "date", "tags", "image"])
+    .find(),
+);
+if (!data.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true });
+}
+const _allPosts = data.value;
 const _appConfig = useAppConfig();
 const _limit = _appConfig['limitPerPage'];
 const posts = _allPosts.slice(_limit * (id - 1), _limit * id);
