@@ -1,18 +1,21 @@
 <template>
   <div class="post">
-    <ContentRenderer v-bind:value="content">
-      <h1 class="post-title" v-bind:id="content.title">
-        <AdjustText v-bind:text="content.title" />
+    <ContentRenderer class="doc-body" v-bind:value="content ?? undefined">
+      <template #empty>
+        {{ onEmpty() }}
+      </template>
+      <h1 class="post-title" v-bind:id="content?.title">
+        <AdjustText v-bind:text="content?.title" />
       </h1>
       <div class="post-sup-info">
-        <div class="post-tag" v-for="tag in content.tags">
+        <div class="post-tag" v-for="tag in content?.tags">
           <NuxtLink v-bind:to="`/tags/${tag}/page-1`">
             <AdjustText v-bind:text="`${tag}`" />
           </NuxtLink>
         </div>
-        <Date v-bind:date="content.date" class="post-date" />
+        <Date v-bind:date="content?.date" class="post-date" />
       </div>
-      <ContentRendererMarkdown class="doc-body" v-bind:value="content" />
+      <ContentRendererMarkdown class="doc-body" v-bind:value="content ?? onEmpty()" />
     </ContentRenderer>
   </div>
 </template>
@@ -203,26 +206,25 @@
 const _appConfig = useAppConfig();
 const _siteName = _appConfig['strings'].siteName;
 const { path: _path } = useRoute();
-const { data } = await useAsyncData(_path, () => queryContent(_path).findOne());
-if (!data.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true });
-}
-const content = data.value;
+const { data: content } = await useAsyncData(_path, () => queryContent(_path).findOne());
 const _isTop = _path === '/';
+const onEmpty = () => {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true })
+};
 useSeoMeta({
-  title: _isTop ? "" : content.title,
-  ogTitle: _isTop ? _siteName : content.title,
-  twitterTitle: _isTop ? _siteName : content.title,
-  description: content.description,
-  ogDescription: content.description,
-  twitterDescription: content.description,
+  title: _isTop ? "" : content.value?.title,
+  ogTitle: _isTop ? _siteName : content.value?.title,
+  twitterTitle: _isTop ? _siteName : content.value?.title,
+  description: content.value?.description,
+  ogDescription: content.value?.description,
+  twitterDescription: content.value?.description,
   ogSiteName: _siteName,
   ogType: _isTop ? 'website' : 'article',
 });
 defineOgImage({
   component: 'Normal',
-  title: content.title,
-  description: content.description,
-  tags: content.tags,
+  title: content.value?.title,
+  description: content.value?.description,
+  tags: content.value?.tags,
 });
 </script>

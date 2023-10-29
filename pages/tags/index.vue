@@ -81,18 +81,14 @@ useSeoMeta({
   ogType: "article",
 });
 
-const { data } = await useAsyncData(
+const { data: _posts } = await useAsyncData(
   'tags',
   () => queryContent('posts')
     .where({ '_draft': false })
     .only(['tags'])
     .find(),
 );
-if (!data.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true });
-}
-const _posts = data.value;
-const _tagsCount: number[] = [_posts].flat().map(post => post.tags).flat().reduce(
+const _tagsCount: number[] = [_posts.value].flat().map(post => post?.tags).flat().reduce(
   (prev, current) => {
     prev[current] = (prev[current] || 0) + 1;
     return prev;
