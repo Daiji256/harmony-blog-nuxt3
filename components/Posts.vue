@@ -105,7 +105,7 @@ type Props = { id: number, tag: string | string[] };
 const { id, tag } = defineProps<Props>();
 
 const { data: _allPosts } = await useAsyncData(
-  // `posts-${tag}`,
+  `posts-${tag}`,
   () => queryContent("posts")
     .where({ "_draft": false })
     .where({ "tags": { $contains: tag } })
