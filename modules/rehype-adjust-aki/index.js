@@ -8,6 +8,11 @@ export default function rehypeAdjustAki() {
     const dPm = "！？‼⁇⁈⁉";
     const emSp = "　";
 
+    replaceShortcodes(tree, "\\jwa", "aa--jw-aki");
+    replaceShortcodes(tree, "\\lrpma", "aa--lr-pm-aki");
+    replaceShortcodes(tree, "\\mpma", "aa--m-pm-aki");
+    replaceShortcodes(tree, "\\dpma", "aa--d-pm-aki");
+
     const jwAkiSC = "aa--jw-aki";
     insertAkiBetween(tree, new RegExp(`[${jpn}][${wrn}]|[${wrn}][${jpn}]`), jwAkiSC);
 
@@ -30,6 +35,24 @@ export default function rehypeAdjustAki() {
     eraseAki(tree, new RegExp(`[${lPm}]`), lPmSC);
     eraseAki(tree, new RegExp(`[${rPm}]`), rPmSC);
     eraseAki(tree, new RegExp(`[${mPm}]`), mPmSC);
+  };
+
+  const replaceShortcodes = (tree, shortcode, className) => {
+    flatMapText(tree, (node) => {
+      const ret = [];
+      let text = node.value;
+      while (true) {
+        const idx = text.indexOf(shortcode);
+        if (idx < 0) {
+          ret.push(makeTextNode(text));
+          break;
+        }
+        ret.push(makeTextNode(text.slice(0, idx)));
+        ret.push(makeSpanNode(className));
+        text = text.slice(idx + shortcode.length);
+      }
+      return ret;
+    });
   };
 
   const insertAkiFirst = (tree, regexp, className) => {
