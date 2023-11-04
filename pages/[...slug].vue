@@ -192,6 +192,14 @@
     margin-bottom: -0.15rem;
   }
 
+  .sr-only {
+    font-size: 0;
+    line-height: 0;
+    color: $color-transparent;
+    margin: 12px 0;
+    border-bottom: 1px solid $color-outline;
+  }
+
   math {
     font-family: $font-family-math;
   }
