@@ -159,6 +159,27 @@
     }
   }
 
+  table {
+    border-collapse: collapse;
+    margin: 12px auto;
+
+    tr {
+      &:first-child th {
+        border-top: 2px solid $color-on-background;
+        border-bottom: 1px solid $color-on-background;
+      }
+
+      &:last-child td {
+        border-bottom: 2px solid $color-on-background;
+      }
+
+      th,
+      td {
+        padding: 4px 12px;
+      }
+    }
+  }
+
   .math-display {
     padding: 8px 0;
     text-align: center;
