@@ -108,20 +108,22 @@
     }
   }
 
-  p a {
-    padding: 4px 0;
-    line-height: 3.2rem;
-    color: $color-primary;
-    text-decoration: none;
+  p,
+  li {
+    a {
+      padding: 4px 0;
+      color: $color-primary;
+      text-decoration: none;
 
-    @media (hover: hover) {
-      &:hover {
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:active {
         text-decoration: underline;
       }
-    }
-
-    &:active {
-      text-decoration: underline;
     }
   }
 
