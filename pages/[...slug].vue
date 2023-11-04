@@ -27,8 +27,7 @@
 
   .post-title {
     font: $font-headline-large;
-    margin: -56px 0 0 0;
-    padding: 64px 0 0 0;
+    margin-top: 12px;
   }
 
   .post-sup-info {
@@ -104,11 +103,8 @@
   h4,
   h5,
   h6 {
-    margin-top: -40px;
-    padding-top: 64px;
-
-    &:first-child {
-      margin-top: -64px;
+    &:not(:first-child) {
+      margin-top: 24px;
     }
   }
 
