@@ -124,6 +124,26 @@
       &:active {
         text-decoration: underline;
       }
+
+      &::after {
+        content: " ";
+        opacity: 0;
+      }
+
+      &::before {
+        content: " ";
+        opacity: 0;
+      }
+    }
+  }
+
+  sup>a {
+    &::after {
+      content: "";
+    }
+
+    &::before {
+      content: "";
     }
   }
 
