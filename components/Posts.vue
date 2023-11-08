@@ -101,8 +101,10 @@
 </style>
 
 <script setup lang="ts">
-type Props = { id: number, tag: string | string[] };
-const { id, tag } = defineProps<Props>();
+const { id, tag } = defineProps({
+  id: { type: Number, required: true },
+  tag: { type: Object as PropType<string | string[]>, required: true },
+});
 
 const { data: _allPosts } = await useAsyncData(
   `posts-${tag}`,

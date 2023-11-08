@@ -86,6 +86,11 @@
 </style>
 
 <script setup lang="ts">
-type Props = { title: string, description: string, date: string, tags: string[], path: string }
-const { title, description, date, tags, path } = defineProps<Props>();
+const { title, description, date, tags, path } = defineProps({
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  date: { type: String, required: true },
+  tags: { type: Array as PropType<string[]>, required: true },
+  path: { type: String, required: true },
+});
 </script>

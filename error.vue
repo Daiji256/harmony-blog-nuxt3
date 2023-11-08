@@ -64,9 +64,9 @@
 </style>
 
 <script setup lang="ts">
-type Props = { error: Object };
-const { error } = defineProps<Props>();
-const statusCode = 'statusCode' in error ? `${error.statusCode}` : 'Unknown Error';
-const statusMessage = 'statusMessage' in error ? `${error.statusMessage}` : '';
+import { NuxtError } from 'nuxt/app';
+const { error } = defineProps({ error: Object as () => NuxtError });
+const statusCode = error ? `${error.statusCode}` : 'Unknown Error';
+const statusMessage = error ? `${error.statusMessage}` : '';
 const goBackHome = useAppConfig()['strings'].goBackHome;
 </script>

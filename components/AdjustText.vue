@@ -9,8 +9,7 @@ import rehypeQuotes from 'rehype-quotes';
 import rehypeAdjustAki from 'rehype-adjust-aki';
 import rehypeStringify from 'rehype-stringify';
 
-type Props = { text: string | undefined };
-const { text } = defineProps<Props>();
+const { text } = defineProps({ text: String });
 const adjustTextHtml = unified()
   .use(rehypeParse)
   .use(rehypeQuotes)

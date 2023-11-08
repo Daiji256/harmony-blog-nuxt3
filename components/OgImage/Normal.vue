@@ -48,8 +48,11 @@
 </template>
 
 <script setup lang="ts">
-type Props = { title: string, description: string | undefined, tags: string[] | undefined };
-const { title, description, tags } = defineProps<Props>();
+const { title, description, tags } = defineProps({
+  title: { type: String, required: true },
+  description: String,
+  tags: { type: Array as PropType<string[]>, default: [] },
+});
 
 // WARNING: The SCSS definition is not taking effect, so this file needs to be set separately.
 const style = {
@@ -85,9 +88,6 @@ const adjustText = (text: string) => {
 
 const adjustedTitle = adjustText(title);
 const adjustedDescription = adjustText(description ?? "");
-const adjustedTags = Array
-  .from(new Set(tags)) // Converting to a set to avoid duplicates caused by a bug.
-  .map(tag => adjustText(tag))
-  .join(' / ');
+const adjustedTags = tags.map(tag => adjustText(tag)).join(' / ');
 const adjustedSiteName = adjustText(useAppConfig()['strings'].siteName);
 </script>
