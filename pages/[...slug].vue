@@ -256,7 +256,7 @@ const { path: _path } = useRoute();
 const { data: content } = await useAsyncData(_path, () => queryContent(_path).findOne());
 const _isTop = _path === '/';
 const onEmpty = () => {
-  throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true });
 };
 useSeoMeta({
   title: _isTop ? "" : content.value?.title,
