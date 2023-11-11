@@ -181,6 +181,11 @@
     }
   }
 
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   table {
     border-collapse: collapse;
     margin: 12px auto;
