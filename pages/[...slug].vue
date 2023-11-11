@@ -108,6 +108,10 @@
     }
   }
 
+  p {
+    text-align: justify;
+  }
+
   p,
   li {
     a {

@@ -38,6 +38,7 @@
 
     .post-description {
       font: $font-body-medium;
+      text-align: justify;
       color: $color-on-surface;
       margin-top: 8px;
     }
