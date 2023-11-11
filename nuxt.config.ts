@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
-  modules: ["@nuxt/content", "@nuxtseo/module"],
+  modules: ["@nuxt/content", "@nuxt/image", "@nuxtseo/module"],
   css: ["@/assets/scss/main.scss"],
   vite: {
     css: {
@@ -32,7 +32,7 @@ export default defineNuxtConfig({
   content: {
     markdown: {
       remarkPlugins: ["remark-math"],
-      rehypePlugins: ["rehype-latex2mathml", "rehype-quotes", "rehype-adjust-aki"],
+      rehypePlugins: ["rehype-latex2mathml", "rehype-quotes", "rehype-adjust-aki", "rehype-custom-image"],
       anchorLinks: false,
     },
     highlight: {
